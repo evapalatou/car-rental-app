@@ -133,7 +133,6 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 Happy coding!
 
 * [To-Do List](#to-do-list)
-   * [Table of Contents](#table-of-contents)
    * [Introduction](#introduction)
        * [Description](#description)
        * [Purpose](#purpose)
