@@ -1,6 +1,8 @@
+<h1 align="center">Elite Rides Car Rental</h1>
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
+Welcome Evanthia Palatou,
 
 This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
@@ -129,3 +131,51 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 ---
 
 Happy coding!
+
+* [To-Do List](#to-do-list)
+   * [Table of Contents](#table-of-contents)
+   * [Introduction](#introduction)
+       * [Description](#description)
+       * [Purpose](#purpose)
+       * [User Demographic](#user-demographic)
+       * [Flowchart](#flowchart)
+   * [Existing Features](#existing-features)
+       * [Welcome screen](#welcome-screen)
+       * [Register](#register)
+       * [Login](#login)
+       * [Add Task](#add-task)
+       * [Delete Task](#delete-task)
+       * [Mark Task](#mark-task)
+       * [Edit Task](#edit-task)
+       * [Show All Tasks](#show-all-tasks)
+       * [Tasks by Priority](#tasks-by-priority)
+       * [Keyword Search](#keyword-search)
+       * [Tasks by Due Date](#tasks-by-due-date)
+       * [Logout](#logout)
+       * [Future Enhancements](#future-enhancements)
+   * [Technologies Used](#technologies-used)
+       * [Overview](#overview)
+       * [Tools](#tools)
+       * [Libraries](#libraries)
+       * [Requirements](#requirements)
+       * [ASCII Art](#ascii-art)
+   * [Manual Testing](#manual-testing)
+       * [Python Code validation through PEP8](#python-code-validation-through-pep8)
+       * [Test Cases](#test-cases)
+       * [Fixed Bugs](#fixed-bugs)
+       * [Unfixed Errors](#unfixed-errors)
+   * [Deployment](#deployment)
+       * [via Heroku](#via-heroku)
+   * [Credits](#credits)
+
+## Introduction
+
+### Description
+Here are the key features of this Python-based task manager (must-have):
+- Task Management: Allow users to add, edit, delete, and mark tasks as done, keeping track of priority levels, due dates, and completion status.
+
+- User Authentication and Data Security: Ensure data privacy and security by implementing a login system with secure password hashing. This allows multiple users to maintain separate task lists and prevents unauthorized access.
+
+- Data Persistence: Enable data persistence across sessions using JSON, so users can retain their task lists between uses of the program.
+
+- CLI-based Usability: Make the tool accessible from the command line with intuitive menu navigation, styled with Rich for an improved CLI experience.
