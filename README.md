@@ -91,6 +91,8 @@
 
 ## The Skeleton Plane
 
+### Wireframes
+
 Homepage
 ![Homepage Wireframe](wireframes/1-homepage.jpg)
 
