@@ -45,13 +45,13 @@
 
 ### User Stories
 
-*Epic: User Responsive Design*
+**Epic: User Responsive Design**
 
 - As a new user, I want to be able to easily understand the main purpose of the app, so that I can learn more about this app.
 - As a new user, I want to be able to easily navigate through the app, so that I can find the content.
 - As a site user, I want to be able to write a message to a contact form, so that I can communicate with the admin.
 
-*Epic: User Authentication*
+**Epic: User Authentication**
 
 - As a new user, I want to be able to register my account, so that I can learn the benefits of the app as a user.
 - As a site user, I want to be able to log in to my account, so that I can have a personal account.
@@ -68,17 +68,17 @@
 - As a site admin, I want to be able to edit/update a product, so that I can change product prices, descriptions, images and other product criteria
 - As a site admin, I want to be able to delete a product, so that I can remove items that are no longer for sale
 
-*Epic: User Profile*
+**Epic: User Profile**
 
 - As a site user, I want to be able to update my profile, so that I can keep my details current
 - As a site user, I want to be able to delete my account, so that I can remove my data if I no longer want the service
 - As a site user, I want to be able to customise my profile, so that I can express my personality
 
-*Epic: Media Management*
+**Epic: Media Management**
 
 - As a site user, I want to be able to interact with profile settings, so that I can upload, store, manage images efficiently.
 
-*Epic: Testimonials Management*
+**Epic: Testimonials Management**
 - As a site user, I want to be able to view ratings for products, so that I can make informed decisions about purchasing products
 - As a site user, I want to be able to write testimonials, so that I can share my thoughts
 - As a site user, I want to be able to filter testimonials, so that I can find what interests me
@@ -91,6 +91,29 @@
 
 ## The Skeleton Plane
 
+Homepage
+![Homepage Wireframe](wireframes/1-homepage.jpg)
+
+Register
+![Registration Wireframe](wireframes/2-register.jpg)
+
+Login
+![Login Wireframe](wireframes/3-login.jpg)
+
+Car Listings
+![Cars Wireframe](wireframes/4-cars.jpg)
+
+Testimonials
+![Testimonials Wireframe](wireframes/5-testimonials.jpg)
+
+Profile
+![Profile Wireframe](wireframes/6-profile.jpg)
+
+My Bookings
+![My Bookings Wireframe](wireframes/7-my-bookings.jpg)
+
+My Testimonials
+![My Testimonials Wireframe](wireframes/8-my-testimonials.jpg)
 ## The Surface Plane
 
 ## Technologies Used
