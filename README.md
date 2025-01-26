@@ -102,7 +102,7 @@ Register
 Login
 ![Login Wireframe](wireframes/3-login.jpg)
 
-Car Listings
+Cars
 ![Cars Wireframe](wireframes/4-cars.jpg)
 
 Testimonials
