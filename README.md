@@ -41,9 +41,9 @@
 
 ### Agile Planning
 
-### Epics
+#### Epics
 
-### User Stories
+#### User Stories
 
 **Epic: User Responsive Design**
 
@@ -89,6 +89,9 @@
 
 ## The Structure Plane
 
+### Features
+### Future Enhancements
+
 ## The Skeleton Plane
 
 ### Wireframes
@@ -116,13 +119,30 @@ My Bookings
 
 My Testimonials
 ![My Testimonials Wireframe](wireframes/8-my-testimonials.jpg)
+
+### Database Design
+### Scurity
+
 ## The Surface Plane
+
+### Design
+### Color Scheme
+### Typography
+### Imagery
 
 ## Technologies Used
 
 ## Manual Testing
 
+### Fixed Bugs
+### Unfixed Errors
+
 ## Deployment
+
+### Version Control
+### Heroku Deployment
+### Run Locally
+### Fork Project
 
 ## Credits
 
