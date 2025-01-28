@@ -38,11 +38,9 @@
 ## The Strategy Plane
 
 ### Site Goals
-
 ### Agile Planning
 
 #### Epics
-
 #### User Stories
 
 **Epic: User Responsive Design**
