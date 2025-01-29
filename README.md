@@ -1,4 +1,4 @@
-<h1 align="center">Elite Rides Car Rental</h1>
+<h1 align="center">🏎 Elite Rides Car Rental 🏎</h1>
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
