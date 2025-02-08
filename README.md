@@ -138,11 +138,8 @@ My Testimonials
 ## Deployment
 
 ### Version Control
-
 ### Heroku Deployment
-
 ### Run Locally
-
 ### Fork Project
 
 ## Credits
