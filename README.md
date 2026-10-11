@@ -43,45 +43,42 @@
 #### Epics
 #### User Stories
 
-**Epic: User Responsive Design**
+**Epic 1: Accounts and access**
 
-- As a new user, I want to be able to easily understand the main purpose of the app, so that I can learn more about this app.
-- As a new user, I want to be able to easily navigate through the app, so that I can find the content.
-- As a site user, I want to be able to write a message to a contact form, so that I can communicate with the admin.
+- As a visitor, I can register an account, so that I can book cars.
+- As a customer, I can log in and out, so that my bookings stay private.
+- As a user, I can see whether I'm logged in, so that I know my session state.
+- As a visitor, I'm redirected to the login page when I open a booking page, so that restricted pages stay protected.
+- As a user, I can reset a forgotten password.
 
-**Epic: User Authentication**
+**Epic 2: Browse the fleet**
 
-- As a new user, I want to be able to register my account, so that I can learn the benefits of the app as a user.
-- As a site user, I want to be able to log in to my account, so that I can have a personal account.
-- As a site user, I want to be able to easily log in and log out, so that I can access my personal account information.
-- As a site user, I want to be able to easily recover my password in case I forget it, so that I can recover access to my account.
-- As a site user, I want to be able to change my password, so that I can be sure that nobody else can access my account.
+- As a visitor, I can browse the available cars, so that I can see what's on offer.
+- As a visitor, I can open a car's detail page (price per day, seats, transmission), so that I can decide.
+- As a visitor, I can filter cars by category (Should), so that I can narrow my choice.
+- As a visitor, I can search by make or model (Could).
 
-**Epic: Reservation System**
+**Epic 3: Reservations**
 
-- As a site user, I want to be able view a category of products/filter products, so that I can find specific items I am interested in without having to scroll through all products
-- As a site user, I want to be able to view more detail on products, so that I can make an informed decision of if the item suits my requirements
-- As a site user, I want to be able to search for a product by name or description, so that I can find a specific product I'd like to purchase
-- As a site admin, I want to be able to add a product, so that I can add new items to my website
-- As a site admin, I want to be able to edit/update a product, so that I can change product prices, descriptions, images and other product criteria
-- As a site admin, I want to be able to delete a product, so that I can remove items that are no longer for sale
+- As a customer, I can book a car for a date range, so that it's reserved for me.
+- As a customer, I'm told when my dates aren't available, so that I can choose others.
+- As a customer, I can see all my bookings, so that I can keep track of them.
+- As a customer, I can edit my booking's dates, so that I can change my plans.
+- As a customer, I can cancel a booking after a confirmation step, so that I don't hold a car I don't need.
+- As a staff member, I can approve or decline reservations (Should).
 
-**Epic: User Profile**
+**Epic 4: Fleet management**
 
-- As a site user, I want to be able to update my profile, so that I can keep my details current
-- As a site user, I want to be able to delete my account, so that I can remove my data if I no longer want the service
-- As a site user, I want to be able to customise my profile, so that I can express my personality
+- As a staff member, I can add, edit and delete (or deactivate) cars and upload an image for each, so that the fleet stays up to date.
 
-**Epic: Media Management**
+**Epic 5: Testimonials**
 
-- As a site user, I want to be able to interact with profile settings, so that I can upload, store, manage images efficiently.
+- As a customer, I can write, edit and delete my own testimonial, so that I can share my experience.
+- As a staff member, I can approve testimonials before they show.
 
-**Epic: Testimonials Management**
-- As a site user, I want to be able to view ratings for products, so that I can make informed decisions about purchasing products
-- As a site user, I want to be able to write testimonials, so that I can share my thoughts
-- As a site user, I want to be able to filter testimonials, so that I can find what interests me
-- As a site user, I want to be able to find detailed testimonial information, so that I can better understand the context
-
+**Epic 6: Site information**
+- As a visitor, I understand what the site offers from the homepage and can navigate it easily.
+- As a visitor, I can send a message through a contact form (Could, because it needs its own model).
 
 ## The Scope Plane
 
