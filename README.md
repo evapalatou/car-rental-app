@@ -55,8 +55,8 @@
 
 - As a visitor, I can browse the available cars, so that I can see what's on offer.
 - As a visitor, I can open a car's detail page (price per day, seats, transmission), so that I can decide.
-- As a visitor, I can filter cars by category (Should), so that I can narrow my choice.
-- As a visitor, I can search by make or model (Could).
+- As a visitor, I can filter cars by category, so that I can narrow my choice.
+- As a visitor, I can search by make or model.
 
 **Epic 3: Reservations**
 
@@ -65,7 +65,7 @@
 - As a customer, I can see all my bookings, so that I can keep track of them.
 - As a customer, I can edit my booking's dates, so that I can change my plans.
 - As a customer, I can cancel a booking after a confirmation step, so that I don't hold a car I don't need.
-- As a staff member, I can approve or decline reservations (Should).
+- As a staff member, I can approve or decline reservations.
 
 **Epic 4: Fleet management**
 
@@ -78,7 +78,7 @@
 
 **Epic 6: Site information**
 - As a visitor, I understand what the site offers from the homepage and can navigate it easily.
-- As a visitor, I can send a message through a contact form (Could, because it needs its own model).
+- As a visitor, I can send a message through a contact form.
 
 ## The Scope Plane
 
