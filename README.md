@@ -43,42 +43,40 @@
 #### Epics
 #### User Stories
 
-**Epic 1: Accounts and access**
+**Epic 1: Accounts**
+- As a new user, I want to register an account so that I can book cars.
+- As a site user, I want to log in and out so that my bookings stay private.
+- As a site user, I want to see that I’m logged in so that I know my session state.
+- As a site user, I want to reset a forgotten password so that I can get back into my account.
+- As a new user, I want to be sent to the login page if I open a booking page so that restricted pages stay protected.
 
-- As a visitor, I can register an account, so that I can book cars.
-- As a customer, I can log in and out, so that my bookings stay private.
-- As a user, I can see whether I'm logged in, so that I know my session state.
-- As a visitor, I'm redirected to the login page when I open a booking page, so that restricted pages stay protected.
-- As a user, I can reset a forgotten password.
-
-**Epic 2: Browse the fleet**
-
-- As a visitor, I can browse the available cars, so that I can see what's on offer.
-- As a visitor, I can open a car's detail page (price per day, seats, transmission), so that I can decide.
-- As a visitor, I can filter cars by category, so that I can narrow my choice.
-- As a visitor, I can search by make or model.
+**Epic 2: Browse Cars and Navigate**
+- As a new user, I want to browse the available cars so that I can see what’s on offer.
+- As a new user, I want to view a car’s details so that I can decide if it suits me.
+- As a new user, I want to filter cars by category so that I can narrow my choice.
+- As a new user, I want to search for cars by make or model so that I can find a specific car quickly.
+- As a new user, I want to understand what the site offers so that I can quickly reach the cars.
 
 **Epic 3: Reservations**
+- As a site user, I want to book a car for a date range so that it’s reserved for me.
+- As a site user, I want to be told when my dates aren’t available so that I can choose others.
+- As a site user, I want to see my bookings so that I can keep track of them.
+- As a site user, I want to edit my booking so that I can change my plans.
+- As a site user, I want to cancel my booking so that I don’t hold a car I don’t need.
+- As a site admin, I want to approve or decline reservations so that I control the fleet.
 
-- As a customer, I can book a car for a date range, so that it's reserved for me.
-- As a customer, I'm told when my dates aren't available, so that I can choose others.
-- As a customer, I can see all my bookings, so that I can keep track of them.
-- As a customer, I can edit my booking's dates, so that I can change my plans.
-- As a customer, I can cancel a booking after a confirmation step, so that I don't hold a car I don't need.
-- As a staff member, I can approve or decline reservations.
+**Epic 4: Fleet Management**
+- As a site admin, I want to add a car so that the fleet stays up to date.
+- As a site admin, I want to edit a car so that I can change its price or details.
+- As a site admin, I want to delete a car so that unavailable cars are removed.
 
-**Epic 4: Fleet management**
+**Epic 5: Contact**
+- As a new user, I want to send a message through a contact form so that I can ask the owner a question.
+- As a site admin, I want to read the contact messages so that I can reply to them.
 
-- As a staff member, I can add, edit and delete (or deactivate) cars and upload an image for each, so that the fleet stays up to date.
-
-**Epic 5: Testimonials**
-
-- As a customer, I can write, edit and delete my own testimonial, so that I can share my experience.
-- As a staff member, I can approve testimonials before they show.
-
-**Epic 6: Site information**
-- As a visitor, I understand what the site offers from the homepage and can navigate it easily.
-- As a visitor, I can send a message through a contact form.
+**Epic 6: Testimonials**
+- As a site user, I want to write a testimonial so that I can share my experience.
+- As a site admin, I want to approve testimonials so that I control what shows.
 
 ## The Scope Plane
 
