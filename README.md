@@ -40,8 +40,7 @@
 ### Site Goals
 ### Agile Planning
 
-#### Epics
-#### User Stories
+#### User Stories: [Car Rental Kanban Board](https://github.com/users/evapalatou/projects/4)
 
 **Epic 1: Accounts**
 - As a new user, I want to register an account so that I can book cars.
