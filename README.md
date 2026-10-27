@@ -89,28 +89,25 @@
 ### Wireframes
 
 Homepage
-![Homepage Wireframe](wireframes/1-homepage.jpg)
+![Homepage Wireframe](wireframes/1-home.png)
 
-Register
-![Registration Wireframe](wireframes/2-register.jpg)
+Car List
+![Car List Wireframe](wireframes/2-car_list.png)
 
-Login
-![Login Wireframe](wireframes/3-login.jpg)
+Car Detail
+![Car Detail Wireframe](wireframes/3-car_detail.png)
 
-Cars
-![Cars Wireframe](wireframes/4-cars.jpg)
-
-Testimonials
-![Testimonials Wireframe](wireframes/5-testimonials.jpg)
-
-Profile
-![Profile Wireframe](wireframes/6-profile.jpg)
+Booking Form
+![Booking Form Wireframe](wireframes/4-booking_form.png)
 
 My Bookings
-![My Bookings Wireframe](wireframes/7-my-bookings.jpg)
+![MyBookings Wireframe](wireframes/5-my_bookings.png)
 
-My Testimonials
-![My Testimonials Wireframe](wireframes/8-my-testimonials.jpg)
+Register
+![Register Wireframe](wireframes/6-register.png)
+
+Login
+![Login Wireframe](wireframes/7-login.png)
 
 ### Database Design
 ### Scurity
