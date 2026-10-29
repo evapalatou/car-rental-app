@@ -109,6 +109,21 @@ Register
 Login
 ![Login Wireframe](wireframes/7-login.png)
 
+Car List (admin)
+![Car List (admin) Wireframe](wireframes/8-car_list_admin.png)
+
+Car Form
+![Car Form Wireframe](wireframes/9-car_form.png)
+
+Reservations
+![Reservations Wireframe](wireframes/10-reservations.png)
+
+Contact Us
+![Contact Us Wireframe](wireframes/11-contact.png)
+
+Testimonials
+![Testimonials Wireframe](wireframes/12-testimonials.png)
+
 ### Database Design
 ### Scurity
 
