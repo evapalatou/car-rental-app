@@ -125,7 +125,10 @@ Testimonials
 ![Testimonials Wireframe](wireframes/12-testimonials.png)
 
 ### Database Design
-### Scurity
+
+![ERD Diagram](diagrams/car-rental-erd.png)
+
+### Security
 
 ## The Surface Plane
 
