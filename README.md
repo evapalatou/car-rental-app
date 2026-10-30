@@ -63,6 +63,7 @@
 - As a site user, I want to edit my booking so that I can change my plans.
 - As a site user, I want to cancel my booking so that I don’t hold a car I don’t need.
 - As a site admin, I want to approve or decline reservations so that I control the fleet.
+- As a site user, I want to receive an email about my reservation so that I have a record of it.
 
 **Epic 4: Fleet Management**
 - As a site admin, I want to add a car so that the fleet stays up to date.
