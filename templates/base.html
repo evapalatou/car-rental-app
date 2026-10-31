@@ -8,10 +8,40 @@
 <body>
 
     <header>
-        <h1>Elite Rides</h1>
+        <h1>ELITE RIDES</h1>
 
         <nav>
-            <!-- Navigation links will go here -->
+            {% if user.is_authenticated %}
+
+                {% if user.is_staff %}
+                    <!-- Staff navigation -->
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'cars' %}">Browse Cars</a>
+                    <a href="#">Reservations</a>
+                    <a href="#">Messages</a>
+                    <span>{{ user.username }}</span>
+                    <a href="{% url 'account_logout' %}">Logout</a>
+
+                {% else %}
+                    <!-- Customer navigation -->
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'cars' %}">Browse Cars</a>
+                    <a href="#">My Bookings</a>
+                    <a href="#">Testimonials</a>
+                    <a href="#">Contact</a>
+                    <span>{{ user.username }}</span>
+                    <a href="{% url 'account_logout' %}">Logout</a>
+                {% endif %}
+
+            {% else %}
+                <!-- Visitor navigation -->
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'cars' %}">Browse Cars</a>
+                <a href="#">Testimonials</a>
+                <a href="#">Contact</a>
+                <a href="{% url 'account_login' %}">Login</a>
+                <a href="{% url 'account_signup' %}">Register</a>
+            {% endif %}
         </nav>
     </header>
 
@@ -21,7 +51,9 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Elite Rides. All rights reserved.</p>
+        <a href="#">Contact</a>
+        <a href="#">Testimonials</a>
+        <p>&copy; Evanthia Palatou</p>
     </footer>
 
 </body>
