@@ -22,7 +22,7 @@
 
     <p><strong>Description:</strong> {{ car.description }}</p>
 
-    <a href="#">Book This Car</a>
+    <a href="{% url 'book_car' car.id %}">Book This Car</a>
 
     <p>
         <a href="{% url 'cars' %}">Back to Browse Cars</a>

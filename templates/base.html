@@ -45,6 +45,14 @@
         </nav>
     </header>
 
+    {% if messages %}
+        <div>
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     <main>
         {% block content %}
         {% endblock %}

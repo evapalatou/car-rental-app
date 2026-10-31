@@ -6,6 +6,7 @@ from cars.views import home, my_cars, car_detail
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('bookings/', include('bookings.urls')),
     path('', home, name='home'),
     path('cars/', my_cars, name='cars'),
     path('cars/<int:car_id>/', car_detail, name='car_detail'),

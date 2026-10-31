@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Book a Car | Elite Rides{% endblock %}
+
+{% block content %}
+
+<section>
+    <h2>Book {{ car.make }} {{ car.model }}</h2>
+
+    <p>Daily Price: €{{ car.daily_price }}</p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Submit Reservation</button>
+    </form>
+
+    <p>
+        <a href="{% url 'car_detail' car.id %}">
+            Back to Car Details
+        </a>
+    </p>
+</section>
+
+{% endblock %}
