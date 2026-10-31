@@ -1,6 +1,8 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.http import require_POST
+
 from cars.models import Car
 
 from .forms import ReservationForm
@@ -108,3 +110,30 @@ def edit_booking(request, reservation_id):
             "reservation": reservation,
         },
     )
+
+
+@login_required
+@require_POST
+def cancel_booking(request, reservation_id):
+    reservation = get_object_or_404(
+        Reservation,
+        id=reservation_id,
+        customer=request.user,
+    )
+
+    if reservation.status == "cancelled":
+        messages.error(
+            request,
+            "This booking has already been cancelled.",
+        )
+        return redirect("my_bookings")
+
+    reservation.status = "cancelled"
+    reservation.save(update_fields=["status", "updated_on"])
+
+    messages.success(
+        request,
+        "Your booking has been cancelled successfully.",
+    )
+
+    return redirect("my_bookings")
