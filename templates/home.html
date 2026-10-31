@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Elite Rides{% endblock %}
+
+{% block content %}
+
+<section>
+    <h2>Welcome to Elite Rides</h2>
+
+    <p>
+        Discover our range of rental cars and find the right vehicle
+        for your next journey. Browse our available cars and book
+        your next trip with Elite Rides.
+    </p>
+
+    <a href="{% url 'cars' %}">Browse Cars</a>
+
+    <a href="{% url 'account_signup' %}">Register</a>
+
+    <a href="{% url 'account_login' %}">Login</a>
+</section>
+
+{% endblock %}
