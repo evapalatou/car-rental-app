@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Manage Reservations | Elite Rides{% endblock %}
+
+{% block content %}
+
+<section>
+    <h2>Manage Reservations</h2>
+
+    {% if reservations %}
+
+        {% for reservation in reservations %}
+
+            <article>
+                <h3>
+                    {{ reservation.car.make }}
+                    {{ reservation.car.model }}
+                </h3>
+
+                <p>
+                    Customer: {{ reservation.customer.username }}
+                </p>
+
+                <p>
+                    Email: {{ reservation.customer.email }}
+                </p>
+
+                <p>
+                    Start Date: {{ reservation.start_date }}
+                </p>
+
+                <p>
+                    End Date: {{ reservation.end_date }}
+                </p>
+
+                <p>
+                    Status: {{ reservation.get_status_display }}
+                </p>
+
+                <form
+                    method="POST"
+                    action="{% url 'approve_reservation' reservation.id %}"
+                >
+                    {% csrf_token %}
+                    <button type="submit">Approve</button>
+                </form>
+
+                <form
+                    method="POST"
+                    action="{% url 'decline_reservation' reservation.id %}"
+                >
+                    {% csrf_token %}
+                    <button type="submit">Decline</button>
+                </form>
+
+            </article>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>There are no pending reservations.</p>
+
+    {% endif %}
+</section>
+
+{% endblock %}

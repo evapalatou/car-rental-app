@@ -1,5 +1,8 @@
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import (
+    login_required,
+    user_passes_test,
+)
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_POST
 
@@ -137,3 +140,63 @@ def cancel_booking(request, reservation_id):
     )
 
     return redirect("my_bookings")
+
+
+@login_required
+@user_passes_test(lambda user: user.is_staff, login_url="/")
+def manage_reservations(request):
+    reservations = Reservation.objects.filter(
+        status="pending",
+        customer__is_staff=False,
+    ).select_related(
+        "customer",
+        "car",
+    ).order_by("start_date")
+
+    return render(
+        request,
+        "bookings/manage_reservations.html",
+        {"reservations": reservations},
+    )
+
+
+@login_required
+@user_passes_test(lambda user: user.is_staff, login_url="/")
+@require_POST
+def approve_reservation(request, reservation_id):
+    reservation = get_object_or_404(
+        Reservation,
+        id=reservation_id,
+        status="pending",
+    )
+
+    reservation.status = "confirmed"
+    reservation.save(update_fields=["status", "updated_on"])
+
+    messages.success(
+        request,
+        "Reservation approved successfully.",
+    )
+
+    return redirect("manage_reservations")
+
+
+@login_required
+@user_passes_test(lambda user: user.is_staff, login_url="/")
+@require_POST
+def decline_reservation(request, reservation_id):
+    reservation = get_object_or_404(
+        Reservation,
+        id=reservation_id,
+        status="pending",
+    )
+
+    reservation.status = "cancelled"
+    reservation.save(update_fields=["status", "updated_on"])
+
+    messages.success(
+        request,
+        "Reservation declined successfully.",
+    )
+
+    return redirect("manage_reservations")

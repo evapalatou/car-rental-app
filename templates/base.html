@@ -17,7 +17,7 @@
                     <!-- Staff navigation -->
                     <a href="{% url 'home' %}">Home</a>
                     <a href="{% url 'cars' %}">Browse Cars</a>
-                    <a href="#">Reservations</a>
+                    <a href="{% url 'manage_reservations' %}">Reservations</a>
                     <a href="#">Messages</a>
                     <span>{{ user.username }}</span>
                     <a href="{% url 'account_logout' %}">Logout</a>
