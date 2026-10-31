@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import (
     login_required,
     user_passes_test,
 )
+from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_POST
 
@@ -10,6 +11,36 @@ from cars.models import Car
 
 from .forms import ReservationForm
 from .models import Reservation
+
+
+def send_reservation_email(reservation, subject, introduction):
+    recipient_email = reservation.customer.email
+
+    if not recipient_email:
+        return False
+
+    email_message = (
+        f"{introduction}\n\n"
+        f"Car: {reservation.car.make} "
+        f"{reservation.car.model}\n"
+        f"Start date: {reservation.start_date}\n"
+        f"End date: {reservation.end_date}\n"
+        f"Status: {reservation.get_status_display()}\n\n"
+        "Thank you for choosing Elite Rides."
+    )
+
+    try:
+        sent = send_mail(
+            subject,
+            email_message,
+            None,
+            [recipient_email],
+            fail_silently=False,
+        )
+    except Exception:
+        return False
+
+    return sent == 1
 
 
 @login_required
@@ -39,12 +70,25 @@ def book_car(request, car_id):
         )
 
         if form.is_valid():
-            form.save()
+            reservation = form.save()
+
+            email_sent = send_reservation_email(
+                reservation,
+                "Your Elite Rides reservation request",
+                "We have received your reservation request.",
+            )
 
             messages.success(
                 request,
                 "Your reservation request has been submitted successfully.",
             )
+
+            if not email_sent:
+                messages.error(
+                    request,
+                    "Your reservation was saved, but we could not "
+                    "send the confirmation email.",
+                )
 
             return redirect("home")
 
@@ -173,10 +217,23 @@ def approve_reservation(request, reservation_id):
     reservation.status = "confirmed"
     reservation.save(update_fields=["status", "updated_on"])
 
+    email_sent = send_reservation_email(
+        reservation,
+        "Your Elite Rides reservation has been approved",
+        "Good news! Your reservation has been approved.",
+    )
+
     messages.success(
         request,
         "Reservation approved successfully.",
     )
+
+    if not email_sent:
+        messages.error(
+            request,
+            "The reservation was approved, but we could not "
+            "send the email notification.",
+        )
 
     return redirect("manage_reservations")
 
@@ -194,9 +251,22 @@ def decline_reservation(request, reservation_id):
     reservation.status = "cancelled"
     reservation.save(update_fields=["status", "updated_on"])
 
+    email_sent = send_reservation_email(
+        reservation,
+        "Your Elite Rides reservation has been declined",
+        "Unfortunately, your reservation has been declined.",
+    )
+
     messages.success(
         request,
         "Reservation declined successfully.",
     )
+
+    if not email_sent:
+        messages.error(
+            request,
+            "The reservation was declined, but we could not "
+            "send the email notification.",
+        )
 
     return redirect("manage_reservations")
