@@ -1,7 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
-
 from cars.models import Car
 
 from .forms import ReservationForm
@@ -51,3 +50,61 @@ def book_car(request, car_id):
         "form": form,
         "car": car,
     })
+
+
+@login_required
+def my_bookings(request):
+    reservations = Reservation.objects.filter(
+        customer=request.user
+    ).select_related("car").order_by("start_date")
+
+    return render(
+        request,
+        "bookings/my_bookings.html",
+        {"reservations": reservations},
+    )
+
+
+@login_required
+def edit_booking(request, reservation_id):
+    reservation = get_object_or_404(
+        Reservation,
+        id=reservation_id,
+        customer=request.user,
+    )
+
+    if reservation.status == "cancelled":
+        messages.error(
+            request,
+            "Cancelled bookings cannot be edited.",
+        )
+        return redirect("my_bookings")
+
+    if request.method == "POST":
+        form = ReservationForm(
+            request.POST,
+            instance=reservation,
+        )
+
+        if form.is_valid():
+            form.save()
+
+            messages.success(
+                request,
+                "Your booking has been updated successfully.",
+            )
+
+            return redirect("my_bookings")
+
+    else:
+        form = ReservationForm(instance=reservation)
+
+    return render(
+        request,
+        "bookings/booking_form.html",
+        {
+            "form": form,
+            "car": reservation.car,
+            "reservation": reservation,
+        },
+    )

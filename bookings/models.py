@@ -74,7 +74,7 @@ class Reservation(models.Model):
 
             if overlap.exists():
                 errors["start_date"] = (
-                    "This car is already booked for those dates."
+                    "This car is not available for those dates."
                 )
 
         if errors:

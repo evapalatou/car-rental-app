@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}My Bookings | Elite Rides{% endblock %}
+
+{% block content %}
+
+<section>
+    <h2>My Bookings</h2>
+
+    {% if reservations %}
+
+        {% for reservation in reservations %}
+
+            <article>
+                <h3>
+                    {{ reservation.car.make }}
+                    {{ reservation.car.model }}
+                </h3>
+
+                <p>
+                    Start Date: {{ reservation.start_date }}
+                </p>
+
+                <p>
+                    End Date: {{ reservation.end_date }}
+                </p>
+
+                <p>
+                    Status: {{ reservation.get_status_display }}
+                </p>
+
+                {% if reservation.status != "cancelled" %}
+                    <a href="{% url 'edit_booking' reservation.id %}">
+                        Edit Booking
+                    </a>
+                {% endif %}
+            </article>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>You don't have any bookings yet.</p>
+
+        <a href="{% url 'cars' %}">Browse Cars</a>
+
+    {% endif %}
+</section>
+
+{% endblock %}
