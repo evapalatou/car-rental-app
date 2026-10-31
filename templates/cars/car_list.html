@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Browse Cars | Elite Rides{% endblock %}
+
+{% block content %}
+
+<section>
+    <h2>Browse Our Cars</h2>
+
+    {% if cars %}
+        {% for car in cars %}
+            <article>
+                <img
+                    src="{{ car.image.url }}"
+                    alt="{{ car.make }} {{ car.model }}"
+                >
+
+                <h3>{{ car.make }} {{ car.model }}</h3>
+
+                <p>€{{ car.daily_price }} per day</p>
+
+                <a href="#">View Details</a>
+            </article>
+        {% endfor %}
+
+    {% else %}
+        <p>No cars are currently available. Please check back soon.</p>
+    {% endif %}
+</section>
+
+{% endblock %}

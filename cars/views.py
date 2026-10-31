@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+from .models import Car
 
 
 def home(request):
@@ -7,4 +8,8 @@ def home(request):
 
 
 def my_cars(request):
-    return HttpResponse("Hello, Cars!")
+    cars = Car.objects.filter(is_active=True)
+
+    return render(request, 'cars/car_list.html', {
+        'cars': cars,
+    })
