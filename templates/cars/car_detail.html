@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}{{ car.make }} {{ car.model }} | Elite Rides{% endblock %}
+
+{% block content %}
+
+<section>
+    <h2>{{ car.make }} {{ car.model }}</h2>
+
+    <img
+        src="{{ car.image.url }}"
+        alt="{{ car.make }} {{ car.model }}"
+    >
+
+    <p><strong>Category:</strong> {{ car.get_category_display }}</p>
+
+    <p><strong>Daily Price:</strong> €{{ car.daily_price }}</p>
+
+    <p><strong>Seats:</strong> {{ car.seats }}</p>
+
+    <p><strong>Transmission:</strong> {{ car.get_transmission_display }}</p>
+
+    <p><strong>Description:</strong> {{ car.description }}</p>
+
+    <a href="#">Book This Car</a>
+
+    <p>
+        <a href="{% url 'cars' %}">Back to Browse Cars</a>
+    </p>
+</section>
+
+{% endblock %}
