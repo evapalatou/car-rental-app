@@ -1,52 +1,95 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{% block title %}Elite Rides{% endblock %}</title>
 </head>
 <body>
 
     <header>
-        <h1>ELITE RIDES</h1>
+        <div class="header-container">
 
-        <nav>
-            {% if user.is_authenticated %}
+            <h1 class="site-logo">ELITE RIDES</h1>
 
-                {% if user.is_staff %}
-                    <!-- Staff navigation -->
-                    <a href="{% url 'home' %}">Home</a>
-                    <a href="{% url 'cars' %}">Browse Cars</a>
-                    <a href="{% url 'manage_reservations' %}">Reservations</a>
-                    <a href="#">Messages</a>
-                    <span>{{ user.username }}</span>
-                    <a href="{% url 'account_logout' %}">Logout</a>
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="site-navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="site-navigation" class="site-navigation">
+
+                {% if user.is_authenticated %}
+
+                    {% if user.is_staff %}
+
+                        <a href="{% url 'home' %}">Home</a>
+                        <a href="{% url 'cars' %}">Browse Cars</a>
+                        <a href="{% url 'manage_reservations' %}">Reservations</a>
+                        <a href="#">Messages</a>
+
+                    {% else %}
+
+                        <a href="{% url 'home' %}">Home</a>
+                        <a href="{% url 'cars' %}">Browse Cars</a>
+                        <a href="{% url 'my_bookings' %}">My Bookings</a>
+                        <a href="#">Testimonials</a>
+                        <a href="#">Contact</a>
+
+                    {% endif %}
 
                 {% else %}
-                    <!-- Customer navigation -->
+
                     <a href="{% url 'home' %}">Home</a>
                     <a href="{% url 'cars' %}">Browse Cars</a>
-                    <a href="{% url 'my_bookings' %}">My Bookings</a>
                     <a href="#">Testimonials</a>
                     <a href="#">Contact</a>
-                    <span>{{ user.username }}</span>
-                    <a href="{% url 'account_logout' %}">Logout</a>
+
                 {% endif %}
 
-            {% else %}
-                <!-- Visitor navigation -->
-                <a href="{% url 'home' %}">Home</a>
-                <a href="{% url 'cars' %}">Browse Cars</a>
-                <a href="#">Testimonials</a>
-                <a href="#">Contact</a>
-                <a href="{% url 'account_login' %}">Login</a>
-                <a href="{% url 'account_signup' %}">Register</a>
-            {% endif %}
-        </nav>
+            </nav>
+
+            <div class="header-actions">
+
+                {% if user.is_authenticated %}
+
+                    <span>{{ user.username }}</span>
+
+                    <a href="{% url 'account_logout' %}"
+                       class="header-login">
+                        Logout
+                    </a>
+
+                {% else %}
+
+                    <a href="{% url 'account_login' %}"
+                       class="header-login">
+                        Login
+                    </a>
+
+                    <a href="{% url 'account_signup' %}"
+                       class="header-register">
+                        Register
+                    </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
     </header>
 
     {% if messages %}
-        <div>
+        <div class="messages">
             {% for message in messages %}
                 <p>{{ message }}</p>
             {% endfor %}
@@ -54,8 +97,7 @@
     {% endif %}
 
     <main>
-        {% block content %}
-        {% endblock %}
+        {% block content %}{% endblock %}
     </main>
 
     <footer>
@@ -63,6 +105,8 @@
         <a href="#">Testimonials</a>
         <p>&copy; Evanthia Palatou</p>
     </footer>
+
+    <script src="{% static 'js/navigation.js' %}"></script>
 
 </body>
 </html>

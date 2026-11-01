@@ -1,24 +1,64 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Home | Elite Rides{% endblock %}
 
 {% block content %}
 
-<section>
-    <h2>Welcome to Elite Rides</h2>
+<section class="hero-section">
+
+    <div class="hero-content">
+
+        <p class="hero-eyebrow">YOUR JOURNEY STARTS HERE</p>
+
+        <h2>Drive your next adventure</h2>
+
+        <p class="hero-description">
+            Explore our range of reliable vehicles and enjoy a smooth,
+            hassle-free rental experience. Whether it's a weekend getaway
+            or a business trip, we make getting there easy.
+        </p>
+
+    </div>
+
+    <div class="hero-image">
+        <img
+            src="{% static 'images/hero.jpg' %}"
+            alt="Car ready for your next journey"
+        >
+    </div>
+
+    <div class="hero-buttons">
+
+        <a href="{% url 'cars' %}" class="button button-primary">
+            Browse Cars
+        </a>
+
+        {% if not user.is_authenticated %}
+
+            <a href="{% url 'account_login' %}" class="button button-login">
+                Login
+            </a>
+
+            <a href="{% url 'account_signup' %}" class="button button-register">
+                Register
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+<section class="home-intro">
+
+    <h2>Simple, flexible car rental</h2>
 
     <p>
-        Discover our range of rental cars and find the right vehicle
-        for your next journey. Browse our available cars and book
-        your next trip with Elite Rides.
+        Choose from our range of vehicles and enjoy convenient,
+        flexible car rental for your next journey.
     </p>
 
-    <a href="{% url 'cars' %}">Browse Cars</a>
-
-    {% if not user.is_authenticated %}
-        <a href="{% url 'account_signup' %}">Register</a>
-        <a href="{% url 'account_login' %}">Login</a>
-    {% endif %}
 </section>
 
 {% endblock %}

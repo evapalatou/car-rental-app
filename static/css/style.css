@@ -1,0 +1,468 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+
+/* Global styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #354454;
+    background-color: #ffffff;
+}
+
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lato', sans-serif;
+}
+
+
+/* Images */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Header */
+header {
+    width: 100%;
+    background-color: #526579;
+    color: #ffffff;
+    padding: 1rem 2rem;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    min-height: 60px;
+}
+
+.site-logo {
+    color: #ffffff;
+    margin: 0;
+    white-space: nowrap;
+    font-size: 1.8rem;
+}
+
+
+/* Desktop navigation */
+.site-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 2.2rem;
+}
+
+.site-navigation a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0 0 4px;
+    border-bottom: 2px solid transparent;
+}
+
+.site-navigation a:hover,
+.site-navigation a.active {
+    border-bottom-color: #ffffff;
+}
+
+
+/* Header buttons */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    white-space: nowrap;
+}
+
+.header-login,
+.header-register {
+    display: inline-block;
+    padding: 0.55rem 1rem;
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+
+.header-login {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.header-register {
+    color: #354454;
+    background-color: #ffffff;
+}
+
+
+/* Hamburger menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+
+/* Main content */
+main {
+    width: 100%;
+    flex: 1;
+    padding: 2rem;
+}
+
+
+/* Homepage hero */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "content image"
+        "buttons image";
+    align-items: center;
+    column-gap: 3rem;
+    row-gap: 1.5rem;
+    width: 100%;
+    margin: 2rem 0 4rem;
+}
+
+.hero-content {
+    grid-area: content;
+}
+
+.hero-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.hero-content h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin: 0 0 1.25rem;
+}
+
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+
+/* Hero image */
+.hero-image {
+    grid-area: image;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+
+/* Hero buttons */
+.hero-buttons {
+    grid-area: buttons;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* Hide Login and Register from the desktop hero */
+.hero-buttons .button-login,
+.hero-buttons .button-register {
+    display: none;
+}
+
+
+/* General button styling */
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #526579;
+}
+
+.button-primary,
+.button-register {
+    background-color: #526579;
+    color: #ffffff;
+}
+
+.button-login {
+    background-color: #ffffff;
+    color: #354454;
+}
+
+
+/* Button hover effects */
+.button,
+.header-login,
+.header-register {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.button:hover,
+.header-login:hover,
+.header-register:hover {
+    background-color: #354454;
+    color: #ffffff;
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+
+/* Button press effect for touchscreens */
+.button:active,
+.header-login:active,
+.header-register:active {
+    background-color: #354454;
+    color: #ffffff;
+    transform: translateY(1px);
+}
+
+
+/* Homepage introduction */
+.home-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.home-intro h2 {
+    font-size: 2rem;
+}
+
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: #526579;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+
+    header {
+        padding: 1rem;
+    }
+
+    .header-container {
+        flex-wrap: nowrap;
+        gap: 1rem;
+    }
+
+    .site-logo {
+        font-size: 1.4rem;
+    }
+
+    .site-navigation {
+        flex: 1;
+        flex-wrap: nowrap;
+        gap: 0.8rem;
+        white-space: nowrap;
+    }
+
+    .site-navigation a {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+
+    .header-actions {
+        gap: 0.4rem;
+    }
+
+    .header-login,
+    .header-register {
+        padding: 0.4rem 0.55rem;
+        font-size: 0.75rem;
+    }
+
+    main {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-section {
+        column-gap: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2.3rem;
+    }
+
+    .hero-image img {
+        height: 350px;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    header {
+        padding: 0.75rem;
+    }
+
+    .header-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .site-logo {
+        font-size: 1.5rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .site-navigation {
+        display: none;
+        flex: 0 0 100%;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 0.75rem;
+        padding-top: 1rem;
+    }
+
+    .site-navigation.active {
+        display: flex;
+    }
+
+    .header-actions {
+        display: none;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+
+    /* Mobile hero order */
+    .hero-section {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "content"
+            "image"
+            "buttons";
+        gap: 1.5rem;
+        margin: 1rem auto 3rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        margin-bottom: 0;
+    }
+
+
+    /* Mobile hero image */
+    .hero-image img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+    }
+
+
+    /* Mobile buttons */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .hero-buttons .button {
+        display: block;
+        width: 100%;
+    }
+
+
+    /* Hide secondary introduction on mobile */
+    .home-intro {
+        display: none;
+    }
+
+
+    /* Mobile footer */
+    footer {
+        padding: 0.75rem;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    footer p {
+        flex-basis: 100%;
+    }
+}
