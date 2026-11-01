@@ -22,7 +22,11 @@
 
     <p><strong>Description:</strong> {{ car.description }}</p>
 
-    <a href="{% url 'book_car' car.id %}">Book This Car</a>
+    {% if user.is_staff %}
+        <a href="{% url 'edit_car' car.id %}">Edit Car</a>
+    {% else %}
+        <a href="{% url 'book_car' car.id %}">Book This Car</a>
+    {% endif %}
 
     <p>
         <a href="{% url 'cars' %}">Back to Browse Cars</a>

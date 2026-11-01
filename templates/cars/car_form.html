@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}Add a Car | Elite Rides{% endblock %}
+{% block title %}
+    {% if car %}Edit Car{% else %}Add a Car{% endif %} | Elite Rides
+{% endblock %}
 
 {% block content %}
 
 <section>
-    <h2>Add a Car</h2>
+    {% if car %}
+        <h2>Edit Car</h2>
+    {% else %}
+        <h2>Add a Car</h2>
+    {% endif %}
 
     <p>Fields marked with * are required.</p>
 
@@ -15,44 +21,56 @@
         <p>
             <strong>Make *</strong>
             {{ form.make }}
+            {{ form.make.errors }}
         </p>
 
         <p>
             <strong>Model *</strong>
             {{ form.model }}
+            {{ form.model.errors }}
         </p>
 
         <p>
             <strong>Category *</strong>
             {{ form.category }}
+            {{ form.category.errors }}
         </p>
 
         <p>
             <strong>Daily price *</strong>
             {{ form.daily_price }}
+            {{ form.daily_price.errors }}
         </p>
 
         <p>
             <strong>Seats *</strong>
             {{ form.seats }}
+            {{ form.seats.errors }}
         </p>
 
         <p>
             <strong>Transmission *</strong>
             {{ form.transmission }}
+            {{ form.transmission.errors }}
         </p>
 
         <p>
             <strong>Description (optional)</strong>
             {{ form.description }}
+            {{ form.description.errors }}
         </p>
 
         <p>
             <strong>Image *</strong>
             {{ form.image }}
+            {{ form.image.errors }}
         </p>
 
-        <button type="submit">Add Car</button>
+        {% if car %}
+            <button type="submit">Save Changes</button>
+        {% else %}
+            <button type="submit">Add Car</button>
+        {% endif %}
     </form>
 
     <a href="{% url 'cars' %}">Back to Browse Cars</a>

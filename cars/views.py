@@ -57,3 +57,38 @@ def add_car(request):
         "cars/car_form.html",
         {"form": form},
     )
+
+
+@login_required
+@user_passes_test(lambda user: user.is_staff, login_url="/")
+def edit_car(request, car_id):
+    car = get_object_or_404(Car, id=car_id)
+
+    if request.method == "POST":
+        form = CarForm(
+            request.POST,
+            request.FILES,
+            instance=car,
+        )
+
+        if form.is_valid():
+            form.save()
+
+            messages.success(
+                request,
+                "Car updated successfully.",
+            )
+
+            return redirect("cars")
+
+    else:
+        form = CarForm(instance=car)
+
+    return render(
+        request,
+        "cars/car_form.html",
+        {
+            "form": form,
+            "car": car,
+        },
+    )
