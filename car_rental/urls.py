@@ -8,6 +8,7 @@ from cars.views import (
     add_car,
     edit_car,
     delete_car,
+    custom_404,
 )
 
 urlpatterns = [
@@ -21,3 +22,5 @@ urlpatterns = [
     path('cars/<int:car_id>/edit/', edit_car, name='edit_car'),
     path('cars/<int:car_id>/delete/', delete_car, name='delete_car'),
 ]
+
+handler404 = custom_404

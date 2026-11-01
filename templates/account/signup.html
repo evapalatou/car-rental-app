@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Register | Elite Rides{% endblock %}
+
+{% block content %}
+
+<div class="signup-background">
+    {% include "includes/home_content.html" %}
+</div>
+
+<div class="signup-overlay">
+
+    <section class="signup-panel">
+
+        <a href="{% url 'home' %}"
+           class="signup-close"
+           aria-label="Close registration">
+            &times;
+        </a>
+
+        <div class="signup-content">
+
+            <div class="signup-heading">
+                <h2>Create your account</h2>
+                <p>Join Elite Rides and get ready for your next journey.</p>
+            </div>
+
+            <form method="post" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                {{ redirect_field }}
+
+                {% if form.non_field_errors %}
+                    <div class="signup-errors">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+
+                {% for field in form %}
+                    <div class="signup-field">
+
+                        {{ field.label_tag }}
+
+                        {{ field }}
+
+                        {% if field.help_text %}
+                            <small>{{ field.help_text }}</small>
+                        {% endif %}
+
+                        {% if field.errors %}
+                            <div class="signup-errors">
+                                {{ field.errors }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+                {% endfor %}
+
+                <button type="submit" class="button button-primary signup-submit">
+                    Create Account
+                </button>
+
+            </form>
+
+            <p class="signup-login">
+                Already have an account?
+                <a href="{{ login_url }}">Sign in</a>
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}
