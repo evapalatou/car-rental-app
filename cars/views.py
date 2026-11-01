@@ -92,3 +92,29 @@ def edit_car(request, car_id):
             "car": car,
         },
     )
+
+
+@login_required
+@user_passes_test(lambda user: user.is_staff, login_url="/")
+def delete_car(request, car_id):
+    if request.method == "POST":
+        car = get_object_or_404(Car, id=car_id)
+
+        if car.reservations.exists():
+            car.is_active = False
+            car.save()
+
+            messages.warning(
+                request,
+                "This car has reservations and cannot be deleted. "
+                "It has been removed from the available cars instead.",
+            )
+        else:
+            car.delete()
+
+            messages.success(
+                request,
+                "Car deleted successfully.",
+            )
+
+    return redirect("cars")
