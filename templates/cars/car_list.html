@@ -7,6 +7,10 @@
 <section>
     <h2>Browse Our Cars</h2>
 
+    {% if user.is_staff %}
+        <a href="{% url 'add_car' %}">Add Car</a>
+    {% endif %}
+
     {% if cars %}
         {% for car in cars %}
             <article>

@@ -1,5 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
+from django.contrib.auth.decorators import (
+    login_required,
+    user_passes_test,
+)
+from django.shortcuts import render, get_object_or_404, redirect
 
+from .forms import CarForm
 from .models import Car
 
 
@@ -25,3 +31,29 @@ def car_detail(request, car_id):
     return render(request, 'cars/car_detail.html', {
         'car': car,
     })
+
+
+@login_required
+@user_passes_test(lambda user: user.is_staff, login_url="/")
+def add_car(request):
+    if request.method == "POST":
+        form = CarForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+
+            messages.success(
+                request,
+                "Car added successfully.",
+            )
+
+            return redirect("cars")
+
+    else:
+        form = CarForm()
+
+    return render(
+        request,
+        "cars/car_form.html",
+        {"form": form},
+    )

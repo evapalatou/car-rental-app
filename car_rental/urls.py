@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 
-from cars.views import home, my_cars, car_detail
+from cars.views import home, my_cars, car_detail, add_car
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -10,4 +10,5 @@ urlpatterns = [
     path('', home, name='home'),
     path('cars/', my_cars, name='cars'),
     path('cars/<int:car_id>/', car_detail, name='car_detail'),
+    path('cars/add/', add_car, name='add_car'),
 ]

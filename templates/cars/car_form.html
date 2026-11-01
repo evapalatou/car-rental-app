@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Add a Car | Elite Rides{% endblock %}
+
+{% block content %}
+
+<section>
+    <h2>Add a Car</h2>
+
+    <p>Fields marked with * are required.</p>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <p>
+            <strong>Make *</strong>
+            {{ form.make }}
+        </p>
+
+        <p>
+            <strong>Model *</strong>
+            {{ form.model }}
+        </p>
+
+        <p>
+            <strong>Category *</strong>
+            {{ form.category }}
+        </p>
+
+        <p>
+            <strong>Daily price *</strong>
+            {{ form.daily_price }}
+        </p>
+
+        <p>
+            <strong>Seats *</strong>
+            {{ form.seats }}
+        </p>
+
+        <p>
+            <strong>Transmission *</strong>
+            {{ form.transmission }}
+        </p>
+
+        <p>
+            <strong>Description (optional)</strong>
+            {{ form.description }}
+        </p>
+
+        <p>
+            <strong>Image *</strong>
+            {{ form.image }}
+        </p>
+
+        <button type="submit">Add Car</button>
+    </form>
+
+    <a href="{% url 'cars' %}">Back to Browse Cars</a>
+</section>
+
+{% endblock %}
