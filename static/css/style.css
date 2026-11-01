@@ -7,15 +7,13 @@
     box-sizing: border-box;
 }
 
-html 
-{
+html {
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
 }
 
-body 
-{
+body {
     margin: 0;
     width: 100%;
     min-height: 100vh;
@@ -385,8 +383,7 @@ footer p {
 
 
 /* Mobile */
-@media (max-width: 480px) 
-{
+@media (max-width: 480px) {
 
     header {
         padding: 0.75rem;
@@ -491,7 +488,12 @@ footer p {
     }
 }
 
-/* Registration Popup */
+
+/* Registration and authentication overlays */
+
+.signup-background {
+    width: 100%;
+}
 
 /* Full-screen translucent overlay */
 .signup-overlay {
@@ -517,7 +519,7 @@ footer p {
     box-shadow: none;
 }
 
-/* Registration content */
+/* Authentication content */
 .signup-content {
     width: 100%;
     max-width: 1400px;
@@ -548,7 +550,7 @@ footer p {
     color: #526579;
 }
 
-/* Heading */
+/* Authentication heading */
 .signup-heading {
     text-align: center;
     margin-bottom: 2rem;
@@ -564,7 +566,7 @@ footer p {
     margin: 0;
 }
 
-/* Registration form */
+/* Authentication form */
 .signup-panel form {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -604,6 +606,7 @@ footer p {
     line-height: 1.5;
 }
 
+/* Authentication errors */
 .signup-errors {
     color: #a12626;
     font-size: 0.85rem;
@@ -612,6 +615,23 @@ footer p {
 .signup-errors ul {
     margin: 0.25rem 0;
     padding-left: 1.25rem;
+}
+
+/* Login error message */
+.login-errors,
+.login-errors ul,
+.login-errors li {
+    text-align: center;
+}
+
+.login-errors {
+    width: 100%;
+    margin: 0 auto 1.5rem;
+}
+
+.login-errors ul {
+    list-style: none;
+    padding: 0;
 }
 
 /* Submit button */
@@ -624,7 +644,7 @@ footer p {
     cursor: pointer;
 }
 
-/* Existing account link */
+/* Existing account links */
 .signup-login {
     text-align: center;
     margin-top: 1.5rem;
@@ -635,7 +655,7 @@ footer p {
     font-weight: 600;
 }
 
-/* Mobile registration */
+/* Mobile authentication */
 @media (max-width: 600px) {
 
     .signup-panel {
@@ -660,4 +680,3 @@ footer p {
         right: 1rem;
     }
 }
-
