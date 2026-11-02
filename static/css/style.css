@@ -569,9 +569,10 @@ footer p {
 /* Authentication form */
 .signup-panel form {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.25rem 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
     width: 100%;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -732,9 +733,9 @@ footer p {
     align-items: center;
     justify-content: flex-start;
     gap: 0.5rem;
-    width: 80%;
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
-    grid-column: 1 / -1;
 }
 
 .remember-field input[type="checkbox"] {
