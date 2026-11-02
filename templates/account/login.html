@@ -4,23 +4,15 @@
 {% block title %}Login | Elite Rides{% endblock %}
 
 {% block content %}
-
 <div class="signup-background">
     {% include "includes/home_content.html" %}
 </div>
 
 <div class="signup-overlay">
-
     <section class="signup-panel">
-
-        <a href="{% url 'home' %}"
-           class="signup-close"
-           aria-label="Close login">
-            &times;
-        </a>
+        <a href="{% url 'home' %}" class="signup-close" aria-label="Close login">&times;</a>
 
         <div class="signup-content">
-
             <div class="signup-heading">
                 <h2>Welcome Back</h2>
                 <p>Sign in to your Elite Rides account.</p>
@@ -37,40 +29,39 @@
                 {{ redirect_field }}
 
                 {% for field in form %}
-                    <div class="signup-field">
-                        {{ field.label_tag }}
-                        {{ field }}
-                        {% if field.help_text %}
-                            <small>{{ field.help_text }}</small>
-                        {% endif %}
-                        {% if field.errors %}
-                            <div class="signup-errors">
-                                {{ field.errors }}
-                            </div>
-                        {% endif %}
-                    </div>
+                    {% if field.name == "remember" %}
+                        <div class="remember-field">
+                            {{ field }}
+                            {{ field.label_tag }}
+                        </div>
+                    {% else %}
+                        <div class="signup-field">
+                            {{ field.label_tag }}
+                            {{ field }}
+
+                            {% if field.errors %}
+                                <div class="signup-errors">
+                                    {{ field.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
                 {% endfor %}
 
-                <button type="submit"
-                        class="button button-primary signup-submit">
+                <button type="submit" class="button button-primary signup-submit">
                     Sign In
                 </button>
-
             </form>
 
             <p class="signup-login">
-                <a href="{% url 'account_reset_password' %}">
-                    Forgot your password?
-                </a>
+                <a href="{% url 'account_reset_password' %}">Forgot your password?</a>
             </p>
 
             <p class="signup-login">
                 Don't have an account?
                 <a href="{% url 'account_signup' %}">Register</a>
             </p>
-
         </div>
     </section>
 </div>
-
 {% endblock %}

@@ -680,3 +680,69 @@ footer p {
         right: 1rem;
     }
 }
+
+/* Password reset form */
+.signup-panel .password-reset-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 1.25rem;
+}
+
+/* Password reset email field */
+.password-reset-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0.4rem;
+}
+
+/* Password reset label */
+.password-reset-field label {
+    width: 80%;
+    text-align: left;
+}
+
+/* Password reset input */
+.password-reset-field input {
+    display: block;
+    width: 80%;
+    padding: 0.85rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #354454;
+    background-color: #ffffff;
+    border: 1px solid #aab5bf;
+    border-radius: 0;
+    margin: 0 auto;
+}
+
+/* Password reset button */
+.password-reset-form .signup-submit {
+    align-self: center;
+}
+
+/* Remember me checkbox */
+.remember-field {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    width: 80%;
+    margin: 0 auto;
+    grid-column: 1 / -1;
+}
+
+.remember-field input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.remember-field label {
+    margin: 0;
+}
