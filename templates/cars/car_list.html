@@ -4,45 +4,190 @@
 
 {% block content %}
 
-<section>
+<section class="car-list-section">
+
     <h2>Browse Our Cars</h2>
 
     {% if user.is_staff %}
         <a href="{% url 'add_car' %}">Add Car</a>
     {% endif %}
 
+    <form method="GET" action="{% url 'cars' %}" class="car-filter-form">
+
+        <!-- Search bar -->
+        <div class="car-search-form">
+            <span class="search-icon" aria-hidden="true"></span>
+
+            <input
+                type="search"
+                name="q"
+                id="car-search"
+                placeholder="Search by make or model..."
+                value="{{ search_query }}"
+                aria-label="Search cars by make or model"
+                oninput="clearTimeout(this.searchTimer); this.searchTimer = setTimeout(() => this.form.requestSubmit(), 500)"
+            >
+        </div>
+
+        <!-- Category buttons -->
+        <input
+            type="hidden"
+            name="category"
+            id="selected-category"
+            value="{{ selected_category }}"
+        >
+
+        <div class="car-category-filter" aria-label="Filter cars by category">
+
+            <button
+                type="button"
+                class="category-button {% if not selected_category %}active{% endif %}"
+                aria-pressed="{% if not selected_category %}true{% else %}false{% endif %}"
+                onclick="selectCategory('')"
+            >
+                All
+            </button>
+
+            <button
+                type="button"
+                class="category-button {% if selected_category == 'economy' %}active{% endif %}"
+                aria-pressed="{% if selected_category == 'economy' %}true{% else %}false{% endif %}"
+                onclick="selectCategory('economy')"
+            >
+                Economy
+            </button>
+
+            <button
+                type="button"
+                class="category-button {% if selected_category == 'suv' %}active{% endif %}"
+                aria-pressed="{% if selected_category == 'suv' %}true{% else %}false{% endif %}"
+                onclick="selectCategory('suv')"
+            >
+                SUV
+            </button>
+
+            <button
+                type="button"
+                class="category-button {% if selected_category == 'electric' %}active{% endif %}"
+                aria-pressed="{% if selected_category == 'electric' %}true{% else %}false{% endif %}"
+                onclick="selectCategory('electric')"
+            >
+                Electric
+            </button>
+
+        </div>
+
+    </form>
+
+    <!-- Available cars heading -->
+    <h3 class="available-cars-heading">Available cars</h3>
+
+    <!-- Car listings -->
     {% if cars %}
-        {% for car in cars %}
-            <article>
-                <img
-                    src="{{ car.image.url }}"
-                    alt="{{ car.make }} {{ car.model }}"
-                >
 
-                <h3>{{ car.make }} {{ car.model }}</h3>
+        <div class="car-grid">
 
-                <p>€{{ car.daily_price }} per day</p>
+            {% for car in cars %}
 
-                <a href="{% url 'car_detail' car.id %}">View Details</a>
+                <article class="car-card">
 
-                {% if user.is_staff %}
-                    <a href="{% url 'edit_car' car.id %}">Edit</a>
-
-                    <form
-                        method="POST"
-                        action="{% url 'delete_car' car.id %}"
-                        onsubmit="return confirm('Are you sure you want to delete this car?');"
+                    <img
+                        src="{{ car.image.url }}"
+                        alt="{{ car.make }} {{ car.model }}"
+                        class="car-card-image"
                     >
-                        {% csrf_token %}
-                        <button type="submit">Delete</button>
-                    </form>
-                {% endif %}
-            </article>
-        {% endfor %}
+
+                    <div class="car-card-content">
+
+                        <h3>{{ car.make }} {{ car.model }}</h3>
+
+                        <span class="car-card-category">
+                            {{ car.get_category_display }}
+                        </span>
+
+                        <p class="car-card-price">
+                            €{{ car.daily_price }}
+                            <span>per day</span>
+                        </p>
+
+                        <a
+                            href="{% url 'car_detail' car.id %}"
+                            class="button button-primary car-details-button"
+                        >
+                            View Details
+                        </a>
+
+                        {% if user.is_staff %}
+                            <div class="car-staff-actions">
+
+                                <a href="{% url 'edit_car' car.id %}">
+                                    Edit
+                                </a>
+
+                                <form
+                                    method="POST"
+                                    action="{% url 'delete_car' car.id %}"
+                                    onsubmit="return confirm('Are you sure you want to delete this car?');"
+                                >
+                                    {% csrf_token %}
+                                    <button type="submit">Delete</button>
+                                </form>
+
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                </article>
+
+            {% endfor %}
+
+        </div>
 
     {% else %}
-        <p>No cars are currently available. Please check back soon.</p>
+
+        {% if search_query %}
+            <p>No cars found. Please try another search.</p>
+        {% elif selected_category %}
+            <p>No cars are currently available in this category. Please try another category.</p>
+        {% else %}
+            <p>No cars are currently available. Please check back soon.</p>
+        {% endif %}
+
     {% endif %}
+
+    <!-- Pagination -->
+    {% if page_obj.paginator.count > 0 %}
+
+        <nav class="car-pagination" aria-label="Car listing pages">
+
+            {% if page_obj.has_previous %}
+                <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_obj.previous_page_number }}">
+                    &lt;&lt; Previous
+                </a>
+            {% endif %}
+
+            <span>
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_obj.next_page_number }}">
+                    Next &gt;&gt;
+                </a>
+            {% endif %}
+
+        </nav>
+
+    {% endif %}
+
 </section>
+
+<script>
+    function selectCategory(category) {
+        document.getElementById('selected-category').value = category;
+        document.querySelector('.car-filter-form').requestSubmit();
+    }
+</script>
 
 {% endblock %}

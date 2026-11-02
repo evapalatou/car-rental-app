@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import (
     login_required,
     user_passes_test,
 )
+from django.core.paginator import Paginator
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .forms import CarForm
@@ -14,10 +16,34 @@ def home(request):
 
 
 def my_cars(request):
+    category = request.GET.get("category", "")
+    search_query = request.GET.get("q", "").strip()
+
     cars = Car.objects.filter(is_active=True)
 
+    if category:
+        cars = cars.filter(category=category)
+
+    if search_query:
+        cars = cars.filter(
+            Q(make__icontains=search_query) |
+            Q(model__icontains=search_query)
+        )
+
+    paginator = Paginator(cars, 9)
+
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    query_params = request.GET.copy()
+    query_params.pop("page", None)
+
     return render(request, 'cars/car_list.html', {
-        'cars': cars,
+        'cars': page_obj,
+        'page_obj': page_obj,
+        'selected_category': category,
+        'search_query': search_query,
+        'query_string': query_params.urlencode(),
     })
 
 
