@@ -1,5 +1,7 @@
 {% load static %}
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,104 +11,119 @@
 </head>
 <body>
 
-    <header>
-        <div class="header-container">
+<header>
+    <div class="header-container">
 
+        <a href="{% url 'home' %}" class="site-logo-link">
             <h1 class="site-logo">ELITE RIDES</h1>
+        </a>
 
-            <button
-                class="menu-toggle"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                aria-controls="site-navigation"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="site-navigation"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-            <nav id="site-navigation" class="site-navigation">
+        <nav id="site-navigation" class="site-navigation">
 
-                {% if user.is_authenticated %}
+            {% if user.is_authenticated %}
 
-                    {% if user.is_staff %}
+                <div class="mobile-menu-account mobile-menu-greeting">
+                    <span>Hello, {{ user.username }}</span>
+                </div>
 
-                        <a href="{% url 'home' %}">Home</a>
-                        <a href="{% url 'cars' %}">Browse Cars</a>
-                        <a href="{% url 'manage_reservations' %}">Reservations</a>
-                        <a href="#">Messages</a>
+                {% if user.is_staff %}
 
-                    {% else %}
-
-                        <a href="{% url 'home' %}">Home</a>
-                        <a href="{% url 'cars' %}">Browse Cars</a>
-                        <a href="{% url 'my_bookings' %}">My Bookings</a>
-                        <a href="#">Testimonials</a>
-                        <a href="#">Contact</a>
-
-                    {% endif %}
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'cars' %}">Browse Cars</a>
+                    <a href="{% url 'manage_reservations' %}">Reservations</a>
+                    <a href="#">Messages</a>
 
                 {% else %}
 
                     <a href="{% url 'home' %}">Home</a>
                     <a href="{% url 'cars' %}">Browse Cars</a>
+                    <a href="{% url 'my_bookings' %}">My Bookings</a>
                     <a href="#">Testimonials</a>
                     <a href="#">Contact</a>
 
                 {% endif %}
 
-            </nav>
+                <div class="mobile-menu-account">
+                    <a href="{% url 'account_logout' %}">Logout</a>
+                </div>
 
-            <div class="header-actions">
+            {% else %}
 
-                {% if user.is_authenticated %}
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'cars' %}">Browse Cars</a>
+                <a href="#">Testimonials</a>
+                <a href="#">Contact</a>
 
-                    <span>{{ user.username }}</span>
+                <div class="mobile-menu-account">
+                    <a href="{% url 'account_login' %}">Login</a>
+                    <a href="{% url 'account_signup' %}">Register</a>
+                </div>
 
-                    <a href="{% url 'account_logout' %}"
-                       class="header-login">
-                        Logout
-                    </a>
+            {% endif %}
 
-                {% else %}
+        </nav>
 
-                    <a href="{% url 'account_login' %}"
-                       class="header-login">
-                        Login
-                    </a>
+        <div class="header-actions">
 
-                    <a href="{% url 'account_signup' %}"
-                       class="header-register">
-                        Register
-                    </a>
+            {% if user.is_authenticated %}
 
-                {% endif %}
+                <span>{{ user.username }}</span>
 
-            </div>
+                <a href="{% url 'account_logout' %}"
+                   class="header-login">
+                    Logout
+                </a>
+
+            {% else %}
+
+                <a href="{% url 'account_login' %}"
+                   class="header-login">
+                    Login
+                </a>
+
+                <a href="{% url 'account_signup' %}"
+                   class="header-register">
+                    Register
+                </a>
+
+            {% endif %}
 
         </div>
-    </header>
 
-    {% if messages %}
-        <div class="messages">
-            {% for message in messages %}
-                <p>{{ message }}</p>
-            {% endfor %}
-        </div>
-    {% endif %}
+    </div>
+</header>
 
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+{% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
 
-    <footer>
-        <a href="#">Contact</a>
-        <a href="#">Testimonials</a>
-        <p>&copy; Evanthia Palatou</p>
-    </footer>
+<main>
+    {% block content %}{% endblock %}
+</main>
 
-    <script src="{% static 'js/navigation.js' %}"></script>
+<footer>
+    <a href="#">Contact</a>
+    <a href="#">Testimonials</a>
+    <p>&copy; Evanthia Palatou</p>
+</footer>
+
+<script src="{% static 'js/navigation.js' %}"></script>
 
 </body>
 </html>

@@ -67,6 +67,14 @@ header a {
     min-height: 60px;
 }
 
+/* Clickable logo */
+.site-logo-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
 .site-logo {
     color: #ffffff;
     margin: 0;
@@ -92,9 +100,15 @@ header a {
     border-bottom: 2px solid transparent;
 }
 
-.site-navigation a:hover,
-.site-navigation a.active {
+.site-navigation > a:hover,
+.site-navigation > a.active {
     border-bottom-color: #ffffff;
+}
+
+
+/* Hide mobile account links on desktop and tablet */
+.mobile-menu-account {
+    display: none;
 }
 
 
@@ -383,7 +397,8 @@ footer p {
 
 
 /* Mobile */
-@media (max-width: 480px) {
+@media (max-width: 480px) 
+{
 
     header {
         padding: 0.75rem;
@@ -419,6 +434,43 @@ footer p {
 
     .header-actions {
         display: none;
+    }
+
+    /* Mobile account links */
+    .mobile-menu-account {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        width: 100%;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: none;
+    }
+
+    /* Greeting above the divider */
+    .mobile-menu-greeting {
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 1rem;
+        border-top: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .mobile-menu-account span {
+        font-weight: 700;
+    }
+
+    .mobile-menu-account a {
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+
+    .mobile-menu-account a:hover {
+        text-decoration: underline;
     }
 
     main {
