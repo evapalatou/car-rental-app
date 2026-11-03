@@ -16,6 +16,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('bookings/', include('bookings.urls')),
     path('contact/', include('contact.urls')),
+    path('testimonials/', include('testimonials.urls')),
     path('', home, name='home'),
     path('cars/', my_cars, name='cars'),
     path('cars/<int:car_id>/', car_detail, name='car_detail'),

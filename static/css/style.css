@@ -1634,3 +1634,64 @@ footer p {
         padding: 1rem;
     }
 }
+
+/* Testimonial form page */
+
+.testimonial-form-section {
+    padding: 3rem 1.5rem;
+}
+
+.testimonial-form-container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+}
+
+.testimonial-form-container h2 {
+    margin-bottom: 1rem;
+    color: #354454;
+    text-align: center;
+}
+
+.testimonial-form-container > p {
+    margin-bottom: 2rem;
+    color: #526579;
+    text-align: center;
+}
+
+.testimonial-form-container form p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.testimonial-form-container label {
+    color: #354454;
+    font-weight: 600;
+}
+
+.testimonial-form-container input,
+.testimonial-form-container textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd1d7;
+    border-radius: 4px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+}
+
+.testimonial-form-container button {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .testimonial-form-section {
+        padding: 2rem 1rem;
+    }
+
+    .testimonial-form-container {
+        padding: 1rem;
+    }
+}

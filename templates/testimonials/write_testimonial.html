@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Write a Testimonial | Elite Rides{% endblock %}
+
+{% block content %}
+
+<section class="testimonial-form-section">
+
+    <div class="testimonial-form-container">
+
+        <h2>Write a Testimonial</h2>
+
+        <p>
+            Share your experience with Elite Rides.
+        </p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="button button-primary">
+                Submit Testimonial
+            </button>
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}
