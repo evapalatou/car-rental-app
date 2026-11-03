@@ -146,9 +146,11 @@ To help with the website I created a flowchart using [Draw.io](https://draw.io/)
 <details>
 <summary><strong>Navigation & Footer</strong></summary>
 The navigation bar displays the ELITE RIDES logo and website name, which also serves as a link to the homepage. It provides access to the main sections of the website. Visitors who are not logged in can access the Register and Login options. Once logged in, customers can access their account features, including My Bookings, and the Logout option. Additional management links are available to staff users. The footer displays © 2026 Evanthia Palatou, followed by links to LinkedIn and GitHub, represented by social media icons.
+
 ![Navigation](readme/feature-1.png) 
 ![Footer](readme/feature-2.png) 
 </details>
+
 ### Future Enhancements
 
 ## The Skeleton Plane
