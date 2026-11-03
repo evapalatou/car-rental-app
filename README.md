@@ -138,6 +138,9 @@ At the beginning of the Elite Rides project, I identified the essential features
 - Integration with external car rental or fleet management services.
 
 ## The Structure Plane
+### Flow Chart
+To help with the website I created a flowchart using [Draw.io](https://draw.io/)
+![Flow Chart](readme/flow-chart.png)
 
 ### Features
 ### Future Enhancements
@@ -184,7 +187,7 @@ Testimonials
 
 ### Database Design
 
-![ERD Diagram](diagrams/car-rental-erd.png)
+![ERD Diagram](readme/car-rental-erd.png)
 
 ### Security
 
