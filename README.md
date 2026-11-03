@@ -203,6 +203,14 @@ Administrators can access the submitted enquiries through a dedicated management
 
 
 ### Future Enhancements
+Due to the project deadline, some additional features could not be implemented within the development timeframe. These have been identified as potential future enhancements for Elite Rides:
+
+- Online Payments: Integrate a secure payment system to allow customers to pay for their reservations directly through the website.
+- Interactive Map: Add a map showing the business location and vehicle collection points to help customers find them easily.
+- Advanced Search and Filters: Introduce additional filtering options, such as price range, number of seats and transmission type.
+- Customer Profiles: Expand customer account functionality to include personal details and preferences.
+- Booking Reminders: Introduce automated email reminders for upcoming reservations.
+- Vehicle Availability Calendar: Provide a calendar view of vehicle availability to make selecting rental dates easier.
 
 ## The Skeleton Plane
 
