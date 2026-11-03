@@ -1087,3 +1087,96 @@ footer p {
 .car-pagination span {
     color: #aab5bf;
 }
+
+/* Car detail page */
+.car-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.car-detail-back {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #354454;
+    text-decoration: none;
+}
+
+.car-detail-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.car-detail-image img {
+    width: 100%;
+    height: 410px;
+    object-fit: cover;
+}
+
+.car-detail-content h2 {
+    margin: 0 0 0.5rem;
+    color: #354454;
+    font-family: 'Lato', sans-serif;
+}
+
+.car-detail-category {
+    margin: 0 0 0.75rem;
+    color: #526579;
+    text-transform: capitalize;
+}
+
+.car-detail-price {
+    margin: 0.75rem 0;
+    color: #354454;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.car-detail-price span {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.car-detail-specifications {
+    margin: 0.75rem 0;
+    padding: 0.5rem 0;
+    border-top: 1px solid #d5dbe0;
+    border-bottom: 1px solid #d5dbe0;
+}
+
+.car-detail-specifications p {
+    margin: 0.5rem 0;
+}
+
+.car-detail-description {
+    margin-bottom: 0.75rem;
+}
+
+.car-detail-description h3 {
+    margin: 0 0 0.5rem;
+    color: #354454;
+    font-family: 'Lato', sans-serif;
+}
+
+.car-detail-description p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Car detail mobile layout */
+@media (max-width: 768px) {
+    .car-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .car-detail-image img {
+        height: 260px;
+    }
+
+    .car-detail-content .button {
+        display: block;
+        width: 100%;
+    }
+}

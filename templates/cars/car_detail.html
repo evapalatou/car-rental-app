@@ -4,33 +4,67 @@
 
 {% block content %}
 
-<section>
-    <h2>{{ car.make }} {{ car.model }}</h2>
+<section class="car-detail">
 
-    <img
-        src="{{ car.image.url }}"
-        alt="{{ car.make }} {{ car.model }}"
-    >
+    <a href="{% url 'cars' %}" class="car-detail-back">
+        &larr; Back to Browse Cars
+    </a>
 
-    <p><strong>Category:</strong> {{ car.get_category_display }}</p>
+    <div class="car-detail-layout">
 
-    <p><strong>Daily Price:</strong> €{{ car.daily_price }}</p>
+        <div class="car-detail-image">
+            <img
+                src="{{ car.image.url }}"
+                alt="{{ car.make }} {{ car.model }}"
+            >
+        </div>
 
-    <p><strong>Seats:</strong> {{ car.seats }}</p>
+        <div class="car-detail-content">
 
-    <p><strong>Transmission:</strong> {{ car.get_transmission_display }}</p>
+            <h2>{{ car.make }} {{ car.model }}</h2>
 
-    <p><strong>Description:</strong> {{ car.description }}</p>
+            <p class="car-detail-category">
+                {{ car.get_category_display }}
+            </p>
 
-    {% if user.is_staff %}
-        <a href="{% url 'edit_car' car.id %}">Edit Car</a>
-    {% else %}
-        <a href="{% url 'book_car' car.id %}">Book This Car</a>
-    {% endif %}
+            <p class="car-detail-price">
+                €{{ car.daily_price }} <span>per day</span>
+            </p>
 
-    <p>
-        <a href="{% url 'cars' %}">Back to Browse Cars</a>
-    </p>
+            <div class="car-detail-specifications">
+
+                <p><strong>Seats:</strong> {{ car.seats }}</p>
+
+                <p>
+                    <strong>Transmission:</strong>
+                    {{ car.get_transmission_display }}
+                </p>
+
+            </div>
+
+            {% if car.description %}
+                <div class="car-detail-description">
+                    <h3>Description</h3>
+                    <p>{{ car.description }}</p>
+                </div>
+            {% endif %}
+
+            {% if user.is_staff %}
+                <a href="{% url 'edit_car' car.id %}"
+                   class="button button-primary">
+                    Edit Car
+                </a>
+            {% else %}
+                <a href="{% url 'book_car' car.id %}"
+                   class="button button-primary">
+                    Book This Car
+                </a>
+            {% endif %}
+
+        </div>
+
+    </div>
+
 </section>
 
 {% endblock %}
