@@ -4,56 +4,90 @@
 
 {% block content %}
 
-<section>
+<section class="my-bookings">
     <h2>My Bookings</h2>
 
     {% if reservations %}
 
-        {% for reservation in reservations %}
+        <div class="bookings-table-wrapper">
+            <table class="bookings-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Car</th>
+                        <th scope="col">Dates</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
 
-            <article>
-                <h3>
-                    {{ reservation.car.make }}
-                    {{ reservation.car.model }}
-                </h3>
+                <tbody>
+                    {% for reservation in reservations %}
+                        <tr>
+                            <td class="booking-car">
+                                <div class="booking-car-info">
+                                    <img
+                                        src="{{ reservation.car.image.url }}"
+                                        alt="{{ reservation.car.make }} {{ reservation.car.model }}"
+                                        class="booking-car-image"
+                                    >
 
-                <p>
-                    Start Date: {{ reservation.start_date }}
-                </p>
+                                    <span>
+                                        {{ reservation.car.make }}
+                                        {{ reservation.car.model }}
+                                    </span>
+                                </div>
+                            </td>
 
-                <p>
-                    End Date: {{ reservation.end_date }}
-                </p>
+                            <td class="booking-dates">
+                                <span>
+                                    {{ reservation.start_date|date:"d M Y" }}
+                                </span>
+                                <span>
+                                    {{ reservation.end_date|date:"d M Y" }}
+                                </span>
+                            </td>
 
-                <p>
-                    Status: {{ reservation.get_status_display }}
-                </p>
+                            <td class="booking-status">
+                                <span class="booking-status-badge booking-status-{{ reservation.status }}">
+                                    {{ reservation.get_status_display }}
+                                </span>
+                            </td>
 
-                {% if reservation.status != "cancelled" %}
+                            <td class="booking-actions">
+                                <a
+                                    href="{% url 'edit_booking' reservation.id %}"
+                                    class="button button-secondary"
+                                >
+                                    Edit
+                                </a>
 
-                    <a href="{% url 'edit_booking' reservation.id %}">
-                        Edit Booking
-                    </a>
-
-                    <form
-                        method="POST"
-                        action="{% url 'cancel_booking' reservation.id %}"
-                        onsubmit="return confirm('Are you sure you want to cancel this booking?');"
-                    >
-                        {% csrf_token %}
-                        <button type="submit">Cancel Booking</button>
-                    </form>
-
-                {% endif %}
-            </article>
-
-        {% endfor %}
+                                <form
+                                    method="POST"
+                                    action="{% url 'cancel_booking' reservation.id %}"
+                                    onsubmit="return confirm('Are you sure you want to cancel this booking?');"
+                                >
+                                    {% csrf_token %}
+                                    <button
+                                        type="submit"
+                                        class="button button-primary"
+                                    >
+                                        Cancel
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
 
     {% else %}
 
         <p>You don't have any bookings yet.</p>
 
-        <a href="{% url 'cars' %}">Browse Cars</a>
+        <a href="{% url 'cars' %}" class="button button-primary">
+            Browse Cars
+        </a>
 
     {% endif %}
 </section>

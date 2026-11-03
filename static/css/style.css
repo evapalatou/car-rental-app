@@ -1050,6 +1050,17 @@ footer p {
     }
 }
 
+/* My Bookings tablet layout */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .booking-dates {
+        white-space: normal;
+    }
+
+    .booking-dates span {
+        display: block;
+    }
+}
+
 /* Mobile layout */
 @media (max-width: 600px) {
     .car-grid {
@@ -1221,5 +1232,214 @@ footer p {
     .car-detail-content form .button {
         display: block;
         width: 100%;
+    }
+}
+
+/* My Bookings page */
+.my-bookings {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.my-bookings h2 {
+    margin: 0 0 2rem;
+    color: #354454;
+}
+
+.bookings-table-wrapper {
+    width: 100%;
+}
+
+.bookings-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.bookings-table th {
+    padding: 0 1rem 1.25rem;
+    color: #526579;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+.bookings-table td {
+    padding: 1.25rem 1rem;
+    vertical-align: middle;
+}
+
+/* Desktop column widths */
+.bookings-table th:nth-child(1),
+.bookings-table td.booking-car {
+    width: 35%;
+}
+
+.bookings-table th:nth-child(2),
+.bookings-table td.booking-dates {
+    width: 25%;
+}
+
+.bookings-table th:nth-child(3),
+.bookings-table td.booking-status {
+    width: 15%;
+}
+
+.bookings-table th:nth-child(4),
+.bookings-table td.booking-actions {
+    width: 25%;
+}
+
+.booking-car-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+    font-weight: 700;
+}
+
+.booking-car-image {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Keep both dates on one line on desktop */
+.booking-dates {
+    white-space: nowrap;
+}
+
+.booking-dates span {
+    display: inline;
+}
+
+.booking-dates span + span::before {
+    content: " – ";
+}
+
+.booking-status-badge {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.booking-status-pending {
+    color: #805b16;
+    background-color: #fff3d6;
+}
+
+.booking-status-confirmed {
+    color: #286344;
+    background-color: #e2f2e9;
+}
+
+.booking-actions {
+    white-space: nowrap;
+}
+
+.booking-actions a,
+.booking-actions button {
+    padding: 0.55rem 0.9rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.booking-actions .button-secondary {
+    margin-right: 0.4rem;
+    color: #354454;
+    background-color: #ffffff;
+    border: 1px solid #526579;
+}
+
+.booking-actions .button-secondary:hover {
+    color: #ffffff;
+    background-color: #354454;
+}
+
+.booking-actions form {
+    display: inline-block;
+    margin: 0;
+}
+
+.booking-actions .button-primary {
+    border: 1px solid #526579;
+}
+
+/* My Bookings mobile layout */
+@media (max-width: 600px) {
+
+    .my-bookings h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    .bookings-table,
+    .bookings-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .bookings-table thead {
+        display: none;
+    }
+
+    .bookings-table tr {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+        width: 100%;
+        padding: 1.25rem 0;
+    }
+
+    .bookings-table td {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+
+    .booking-car-info {
+        gap: 1rem;
+    }
+
+    .booking-car-image {
+        width: 110px;
+        height: 75px;
+    }
+
+    .booking-dates {
+        white-space: nowrap;
+    }
+
+    .booking-dates::before {
+        content: "Dates: ";
+        font-weight: 700;
+    }
+
+    .booking-dates span {
+        display: inline;
+    }
+
+    .booking-dates span + span::before {
+        content: " – ";
+    }
+
+    .booking-status::before {
+        content: "Status: ";
+        font-weight: 700;
+    }
+
+    .booking-actions {
+        display: flex !important;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .booking-actions form {
+        display: inline-block;
     }
 }

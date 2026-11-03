@@ -104,7 +104,8 @@ def book_car(request, car_id):
 @login_required
 def my_bookings(request):
     reservations = Reservation.objects.filter(
-        customer=request.user
+        customer=request.user,
+        status__in=["pending", "confirmed"],
     ).select_related("car").order_by("start_date")
 
     return render(
@@ -175,8 +176,7 @@ def cancel_booking(request, reservation_id):
         )
         return redirect("my_bookings")
 
-    reservation.status = "cancelled"
-    reservation.save(update_fields=["status", "updated_on"])
+    reservation.delete()
 
     messages.success(
         request,
@@ -248,14 +248,13 @@ def decline_reservation(request, reservation_id):
         status="pending",
     )
 
-    reservation.status = "cancelled"
-    reservation.save(update_fields=["status", "updated_on"])
-
     email_sent = send_reservation_email(
         reservation,
         "Your Elite Rides reservation has been declined",
         "Unfortunately, your reservation has been declined.",
     )
+
+    reservation.delete()
 
     messages.success(
         request,
