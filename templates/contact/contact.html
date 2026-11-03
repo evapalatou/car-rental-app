@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us | Elite Rides{% endblock %}
+
+{% block content %}
+
+<section class="contact-section">
+
+    <div class="contact-container">
+
+        <h2>Contact Us</h2>
+
+        <p class="contact-intro">
+            Have a question? Send us a message and we'll get back to you.
+        </p>
+
+        <form method="POST" class="contact-form">
+
+            {% csrf_token %}
+
+            {% for field in form %}
+
+                <div class="contact-field">
+
+                    <label for="{{ field.id_for_label }}">
+                        {{ field.label }}
+                    </label>
+
+                    {{ field }}
+
+                    {% for error in field.errors %}
+                        <p class="contact-error">{{ error }}</p>
+                    {% endfor %}
+
+                </div>
+
+            {% endfor %}
+
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    <p class="contact-error">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+
+            <button type="submit" class="contact-submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}
