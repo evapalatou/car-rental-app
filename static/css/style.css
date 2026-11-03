@@ -1555,3 +1555,82 @@ footer p {
         width: 100%;
     }
 }
+
+/* Staff messages page */
+
+.messages-section {
+    padding: 3rem 1.5rem;
+}
+
+.messages-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.messages-container h2 {
+    margin-bottom: 2rem;
+    color: #354454;
+    text-align: center;
+}
+
+.message-card {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid #cbd1d7;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+.message-card p {
+    margin-bottom: 0.75rem;
+    color: #354454;
+}
+
+.message-status {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.message-unread {
+    background-color: #f1e5d0;
+    color: #78521b;
+}
+
+.message-read {
+    background-color: #e8ecef;
+    color: #526579;
+}
+
+.message-content {
+    padding: 1rem;
+    background-color: #f5f6f7;
+    border-radius: 4px;
+    overflow-wrap: anywhere;
+}
+
+.message-card button {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #526579;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.message-card button:hover {
+    background-color: #354454;
+}
+
+@media (max-width: 600px) {
+    .messages-section {
+        padding: 2rem 1rem;
+    }
+
+    .message-card {
+        padding: 1rem;
+    }
+}
