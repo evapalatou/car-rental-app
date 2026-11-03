@@ -1,5 +1,11 @@
 <h1 align="center">🏎 Elite Rides Car Rental 🏎</h1>
 
+## Overview
+Elite Rides is a web-based car rental platform designed to make finding and booking a rental car simple and convenient. The website allows visitors to browse a selection of available vehicles, explore individual car details and choose a vehicle that suits their travel needs. With a clean and responsive interface, Elite Rides aims to provide a straightforward experience across desktop, tablet and mobile devices. Registered customers can manage their reservations, view their booking history and share their experiences through testimonials. The platform also provides a contact form for enquiries, making it easy for customers to get in touch.
+
+## Purpose
+The purpose of Elite Rides is to provide a user-friendly car rental application that streamlines the vehicle browsing and reservation process for customers while allowing administrators to manage the platform efficiently. Customers can create an account, browse available cars, make reservations, manage their bookings and submit testimonials. Administrators have access to dedicated management functionality, allowing them to add, edit and remove vehicles, oversee reservations, manage customer enquiries and approve testimonials. The project brings together customer-facing features and administrative tools in one full-stack web application, providing a practical and accessible solution for managing a car rental service.
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 * [Elite Rides Car Rental](#elite-rides-car-rental)
