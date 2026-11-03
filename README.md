@@ -46,7 +46,17 @@ The purpose of Elite Rides is to provide a user-friendly car rental application 
 ## The Strategy Plane
 
 ### Site Goals
+- Provide a fully responsive, user-friendly platform for customers to browse available rental cars.
+- Allow visitors to explore individual vehicles and view their specifications, features and rental prices.
+- Enable registered customers to create accounts, make reservations and manage their bookings.
+- Provide secure user and administrator access with appropriate permissions.
+- Allow administrators to manage vehicles, reservations, customer enquiries and testimonials through dedicated management features.
+- Offer customers a convenient way to contact the business and share their experiences through testimonials.
+- Create a reliable and straightforward car rental experience across desktop, tablet and mobile devices.
+
 ### Agile Planning
+![Kanban Board](readme/kanban-board.png)
+Elite Rides Car Rental was developed using Agile methodologies, with tasks organised and tracked through a GitHub Projects Kanban board. The project was divided into manageable user stories, allowing development to progress in small, structured steps. Each user story includes acceptance criteria to define the expected functionality and establish clear conditions for completion. GitHub Issues were used to document individual tasks, track progress and organise development work. Labels helped categorise issues and distinguish different types of work. The Kanban board provided an overview of the project's progress, with user stories moved through the relevant stages as development and testing progressed. This approach helped prioritise essential features, monitor completed work and identify outstanding tasks. For more details, you can view the Elite Rides GitHub Projects board and the project repository.
 
 #### User Stories: [Car Rental Kanban Board](https://github.com/users/evapalatou/projects/4)
 
