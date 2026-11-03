@@ -279,8 +279,12 @@ The design of Elite Rides focuses on creating a clean, modern and user-friendly 
 ### Color Scheme
 The colour palette for Elite Rides combines muted blue-grey tones with white backgrounds to create a clean, professional and welcoming appearance. The primary slate blue-grey shade #526579 is used for the header, footer, buttons and other accents, providing visual consistency throughout the website. White #ffffff is used for the main content backgrounds and contrasting text, keeping the interface bright and easy to read. Dark slate #354454 provides contrast for body text, while softer grey shades such as #aab5bf and #d5dbe0 are used for borders and card outlines. Light grey #f1f2f3 is used for notification messages, ensuring that feedback is clearly visible without distracting from the main content.
 
+![Color Palette](readme/coolors.png)
+
 ### Typography
 Elite Rides uses two complementary sans-serif typefaces, Lato and Open Sans, to create a consistent and readable visual identity. Lato is used for headings throughout the website, providing a clean and modern appearance that gives titles a clear visual presence. Open Sans is used for body text, forms, buttons, inputs and other interface elements, ensuring readability and consistency across different sections. Together, these fonts create a balanced design that prioritises clarity and ease of navigation.
+
+![Typography](readme/typography.png)
 
 ### Imagery
 Imagery plays an important role in introducing the car rental service and helping customers explore the available vehicles. The homepage features a prominent hero image that supports the website's welcoming introduction and reinforces its focus on car rentals. Vehicle photographs are also displayed throughout the Browse Cars page and individual car detail pages, allowing customers to see the vehicles before making a reservation. Images are presented using responsive styling to maintain a consistent appearance across desktop, tablet and mobile devices.
