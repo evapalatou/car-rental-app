@@ -482,7 +482,7 @@ footer p {
         text-transform: uppercase;
         letter-spacing: 1px;
     }
-    
+
 
     .mobile-menu-account a:hover {
         text-decoration: underline;
@@ -1258,7 +1258,7 @@ footer p {
 }
 
 .my-bookings h2 {
-    margin: 0 0 2rem;
+    margin-bottom: 2rem;
     color: #354454;
 }
 
@@ -1462,7 +1462,7 @@ footer p {
 /* Contact page */
 
 .contact-section {
-    padding: 3rem 1.5rem;
+    padding: 0 1.5rem 3rem;
 }
 
 .contact-container {
@@ -1696,71 +1696,76 @@ footer p {
     }
 }
 
+
 /* Public testimonials page */
 
-.testimonials-section,
-.manage-testimonials-section {
-    padding: 3rem 1.5rem;
+/* Public page layout */
+.testimonials-section {
+    width: 100%;
 }
 
-.testimonials-container,
-.manage-testimonials-container {
-    max-width: 900px;
-    margin: 0 auto;
+.testimonials-container {
+    width: 100%;
+    margin: 0;
 }
 
-.testimonials-container h2,
-.manage-testimonials-container h2 {
-    margin-bottom: 1rem;
-    color: #354454;
-    text-align: center;
-}
-
-.testimonials-intro {
+.testimonials-container h2 {
     margin-bottom: 2rem;
-    color: #526579;
-    text-align: center;
+    color: #354454;
+    text-align: left;
 }
 
-.testimonials-list,
-.manage-testimonials-list {
+/* Three-column testimonial grid */
+.testimonials-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 2rem;
+}
+
+/* Individual testimonial card */
+.testimonial-card {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-}
-
-.testimonial-card,
-.manage-testimonial-card {
+    min-width: 0;
     padding: 1.5rem;
     background-color: #ffffff;
-    border: 1px solid #e0e4e8;
+    border: 1px solid #d5dbe0;
     border-radius: 4px;
 }
 
-.testimonial-card h3,
-.manage-testimonial-card h3 {
-    margin-bottom: 0.75rem;
-    color: #354454;
+/* Rating stars */
+.testimonial-stars {
+    margin-bottom: 1rem;
+    color: #808080;
+    font-size: 1.2rem;
+    letter-spacing: 0.15rem;
+    text-align: left;
 }
 
-.testimonial-rating {
-    margin-bottom: 0.75rem;
-    color: #526579;
-    font-weight: 600;
-}
-
-.testimonial-card p,
-.manage-testimonial-card p {
+/* Testimonial message */
+.testimonial-message {
+    margin: 0 0 1.5rem;
     color: #526579;
     line-height: 1.6;
     overflow-wrap: anywhere;
 }
 
+/* Author and submission date */
+.testimonial-author {
+    margin: auto 0 0;
+    padding-top: 1rem;
+    color: #526579;
+    font-size: 0.9rem;
+}
+
+/* Write a Testimonial button */
 .testimonials-action {
     margin-top: 2rem;
     text-align: center;
 }
 
+/* Empty testimonials message */
 .no-testimonials {
     padding: 1.5rem;
     background-color: #f5f6f7;
@@ -1769,8 +1774,49 @@ footer p {
     border-radius: 4px;
 }
 
-/* Staff testimonial management */
 
+/* Staff testimonial management page */
+.manage-testimonials-section {
+    padding: 3rem 1.5rem;
+}
+
+.manage-testimonials-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.manage-testimonials-container h2 {
+    margin-bottom: 1rem;
+    color: #354454;
+    text-align: center;
+}
+
+.manage-testimonials-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.manage-testimonial-card {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #e0e4e8;
+    border-radius: 4px;
+}
+
+.manage-testimonial-card h3 {
+    margin-bottom: 0.75rem;
+    color: #354454;
+}
+
+.manage-testimonial-card p {
+    color: #526579;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+
+/* Staff testimonial management actions */
 .testimonial-actions {
     display: flex;
     gap: 1rem;
@@ -1785,15 +1831,30 @@ footer p {
     width: 100%;
 }
 
+
+/* Tablet testimonial layout */
+@media (max-width: 992px) {
+    .testimonials-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* Mobile testimonial layout */
 @media (max-width: 600px) {
-    .testimonials-section,
-    .manage-testimonials-section {
-        padding: 2rem 1rem;
+
+    .testimonials-list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .testimonial-card,
     .manage-testimonial-card {
         padding: 1rem;
+    }
+
+    .manage-testimonials-section {
+        padding: 2rem 1rem;
     }
 
     .testimonial-actions {
