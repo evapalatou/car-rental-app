@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Manage Testimonials | Elite Rides{% endblock %}
+
+{% block content %}
+
+<section class="manage-testimonials-section">
+
+    <div class="manage-testimonials-container">
+
+        <h2>Manage Testimonials</h2>
+
+        {% if testimonials %}
+
+            <div class="manage-testimonials-list">
+
+                {% for testimonial in testimonials %}
+
+                    <article class="manage-testimonial-card">
+
+                        <h3>{{ testimonial.author.username }}</h3>
+
+                        <p>
+                            Rating: {{ testimonial.rating }}/5
+                        </p>
+
+                        <p>{{ testimonial.message }}</p>
+
+                        <p>
+                            Submitted:
+                            {{ testimonial.created_on|date:"d M Y" }}
+                        </p>
+
+                        <div class="testimonial-actions">
+
+                            <form
+                                method="POST"
+                                action="{% url 'approve_testimonial' testimonial.id %}"
+                            >
+                                {% csrf_token %}
+                                <button
+                                    type="submit"
+                                    class="button button-primary"
+                                >
+                                    Approve
+                                </button>
+                            </form>
+
+                            <form
+                                method="POST"
+                                action="{% url 'reject_testimonial' testimonial.id %}"
+                            >
+                                {% csrf_token %}
+                                <button
+                                    type="submit"
+                                    class="button button-secondary"
+                                >
+                                    Reject
+                                </button>
+                            </form>
+
+                        </div>
+
+                    </article>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <p class="no-testimonials">
+                There are no testimonials awaiting approval.
+            </p>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Testimonials | Elite Rides{% endblock %}
+
+{% block content %}
+
+<section class="testimonials-section">
+
+    <div class="testimonials-container">
+
+        <h2>Customer Testimonials</h2>
+
+        <p class="testimonials-intro">
+            Read about the experiences of our customers.
+        </p>
+
+        {% if testimonials %}
+
+            <div class="testimonials-list">
+
+                {% for testimonial in testimonials %}
+
+                    <article class="testimonial-card">
+
+                        <h3>{{ testimonial.author.username }}</h3>
+
+                        <p class="testimonial-rating">
+                            Rating: {{ testimonial.rating }}/5
+                        </p>
+
+                        <p>{{ testimonial.message }}</p>
+
+                    </article>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <p class="no-testimonials">
+                There are no approved testimonials yet.
+            </p>
+
+        {% endif %}
+
+        <div class="testimonials-action">
+            <a
+                href="{% url 'write_testimonial' %}"
+                class="button button-primary"
+            >
+                Write a Testimonial
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
