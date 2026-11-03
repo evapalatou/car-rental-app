@@ -216,6 +216,7 @@ Due to the project deadline, some additional features could not be implemented w
 
 ### Wireframes
 To create the following wireframes I used [Marvel App](http://marvelapp.com/)
+
 Homepage
 ![Homepage Wireframe](wireframes/1-home.png)
 
@@ -257,6 +258,18 @@ Testimonials
 ![ERD Diagram](readme/car-rental-erd.png)
 
 ### Security
+Security was an important consideration throughout the development of Elite Rides. Django's built-in security features and authentication system were used to help protect user accounts, customer information and application functionality.
+
+The following security measures were implemented:
+- User Authentication: Django Allauth provides user registration, login, logout and password reset functionality.
+- Password Security: User passwords are securely hashed by Django rather than stored as plain text. Password validation is used to enforce password requirements.
+- Access Control: Login requirements protect customer-only functionality, while staff-only permissions restrict administrative features.
+- Authorisation: Customers can only view and manage their own reservations. Administrative actions are restricted to authorised staff members.
+- CSRF Protection: Django's CSRF protection helps prevent unauthorised form submissions.
+- SQL Injection Protection: Django's ORM is used for database queries, helping protect against SQL injection attacks.
+- Environment Variables: Sensitive configuration values, including the secret key, database credentials and email credentials, are stored in environment variables rather than committed to the GitHub repository.
+- Production Settings: Debug mode is disabled in the production environment to avoid exposing sensitive debugging information.
+- Secure Database Relationships: Reservation records are associated with their respective customers and vehicles, helping maintain data integrity.
 
 ## The Surface Plane
 
