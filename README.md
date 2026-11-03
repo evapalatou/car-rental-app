@@ -97,6 +97,45 @@ Elite Rides Car Rental was developed using Agile methodologies, with tasks organ
 - As a site admin, I want to approve testimonials so that I control what shows.
 
 ## The Scope Plane
+At the beginning of the Elite Rides project, I identified the essential features needed to create a functional car rental platform. To manage the project scope, prioritise development and avoid scope creep within the available timeframe, I used the MoSCoW prioritisation method. This approach helped me distinguish between essential features required for the minimum viable product and additional functionality that could be considered for future development.
+
+**Must Have**
+- User registration, login and logout.
+- Password recovery.
+- Browse available rental cars.
+- View individual car details.
+- Search cars by make or model.
+- Filter cars by category.
+- Make a reservation by selecting rental dates.
+- Check car availability and prevent overlapping reservations.
+- View, edit and cancel personal reservations.
+- Email notifications relating to reservations.
+- Administrator access with appropriate permissions.
+- Full CRUD functionality for car management.
+- Administrator ability to approve or decline reservations.
+- Contact form for customer enquiries.
+- Administrator ability to manage contact messages.
+- Customer testimonials and administrator approval.
+- Responsive design for desktop, tablet and mobile devices.
+
+**Should Have**
+- A dedicated homepage introducing the car rental service.
+- Clear navigation for customers and administrators.
+- Informative confirmation and feedback messages.
+- A straightforward and accessible user experience.
+
+**Could Have**
+- Online payment integration.
+- Customer profile management.
+- Automated booking reminders.
+- Additional vehicle filtering options.
+
+**Won't Have**
+- Online payment processing.
+- A loyalty or rewards programme.
+- A live chat support system.
+- A mobile application.
+- Integration with external car rental or fleet management services.
 
 ## The Structure Plane
 
