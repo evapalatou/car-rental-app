@@ -1,5 +1,7 @@
 <h1 align="center">🏎 Elite Rides Car Rental 🏎</h1>
 
+![Overview](readme/overvieww.png)
+
 ## Overview
 Elite Rides is a web-based car rental platform designed to make finding and booking a rental car simple and convenient. The website allows visitors to browse a selection of available vehicles, explore individual car details and choose a vehicle that suits their travel needs. With a clean and responsive interface, Elite Rides aims to provide a straightforward experience across desktop, tablet and mobile devices. Registered customers can manage their reservations, view their booking history and share their experiences through testimonials. The platform also provides a contact form for enquiries, making it easy for customers to get in touch.
 
