@@ -151,6 +151,57 @@ The navigation bar displays the ELITE RIDES logo and website name, which also se
 ![Footer](readme/feature-2.png) 
 </details>
 
+<details>
+<summary><strong>Home Page</strong></summary>
+When users visit Elite Rides, they are welcomed by the homepage, which introduces the car rental service through a clear heading, descriptive text and a featured car image. A Browse Cars button directs visitors to the available vehicles, where they can explore the fleet and find a car that suits their needs. The responsive layout adapts to desktop, tablet and mobile screens, providing a consistent browsing experience across devices.
+
+![Home Page](readme/feature-3.png) 
+</details>
+
+<details>
+<summary><strong>Registration Page</strong></summary>
+New users can create an account through the Sign Up page by providing a username, email address and password. The form includes password confirmation and validation to ensure that passwords meet the required security criteria. Existing users can follow the Sign In link to access their accounts. After successful registration, users are redirected to the homepage and shown a confirmation message.
+
+![Registration Page](readme/feature-4.png) 
+</details>
+
+<details>
+<summary><strong>Login Page</strong></summary>
+Registered customers can access their accounts through the Login page by entering their username and password. The page also provides a Forgot Password? link to help users reset their password if needed. After successfully logging in, customers are redirected to the homepage and shown a confirmation message.
+
+![Login Page](readme/feature-5.png) 
+</details>
+
+<details>
+<summary><strong>Browse Cars Page</strong></summary>
+The Browse Cars page allows users to explore the available rental vehicles. Each car is displayed in its own card, showing an image, make and model, category, transmission, seating capacity and daily rental price. Users can search for a specific vehicle by make or model and filter the results by car category. Each card also includes a View Details button, allowing users to access more information about the selected vehicle and proceed with a reservation.
+
+![Browse Cars Page](readme/feature-6.png) 
+</details>
+
+<details>
+<summary><strong>Testimonials Page</strong></summary>
+The Testimonials page allows visitors to read feedback shared by customers about their experience with Elite Rides. Each approved testimonial displays the customer's name, rating, message and submission date. Registered customers can submit their own testimonials through the Add Your Testimonial option. Submitted testimonials require administrator approval before appearing publicly on the website.
+
+![Testimonials Page](readme/feature-7.png) 
+</details>
+
+<details>
+<summary><strong>Contact Page</strong></summary>
+The Contact page provides visitors with a convenient way to get in touch with Elite Rides. The contact form allows users to submit an enquiry by providing their name, email address and message. Once submitted, a confirmation message informs them that their enquiry has been received.
+
+The form includes the following fields:
+- Name (required)
+- Email Address (required)
+- Message (required)
+- A Send Message button allows users to submit their enquiry.
+
+Administrators can access the submitted enquiries through a dedicated management page, where they can review customer messages and manage incoming enquiries.
+
+![Contact Page](readme/feature-8.png) 
+</details>
+
+
 ### Future Enhancements
 
 ## The Skeleton Plane
