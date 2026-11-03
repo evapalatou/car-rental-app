@@ -158,6 +158,21 @@ header a {
 }
 
 
+/* Site-wide notification messages */
+.messages {
+    width: 100%;
+    margin: 1.5rem auto;
+    padding: 0.85rem 1.5rem;
+    background-color: #f1f2f3;
+    color: #354454;
+    text-align: center;
+}
+
+.messages p {
+    margin: 0.35rem 0;
+}
+
+
 /* Main content */
 main {
     width: 100%;
