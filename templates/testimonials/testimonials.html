@@ -8,11 +8,7 @@
 
     <div class="testimonials-container">
 
-        <h2>Customer Testimonials</h2>
-
-        <p class="testimonials-intro">
-            Read about the experiences of our customers.
-        </p>
+        <h2>Testimonials</h2>
 
         {% if testimonials %}
 
@@ -22,13 +18,27 @@
 
                     <article class="testimonial-card">
 
-                        <h3>{{ testimonial.author.username }}</h3>
+                        <div
+                            class="testimonial-stars"
+                            aria-label="Rating: {{ testimonial.rating }} out of 5"
+                        >
+                            {% for star in "12345" %}
+                                {% if forloop.counter <= testimonial.rating %}
+                                    <span aria-hidden="true">★</span>
+                                {% else %}
+                                    <span aria-hidden="true">☆</span>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
 
-                        <p class="testimonial-rating">
-                            Rating: {{ testimonial.rating }}/5
+                        <p class="testimonial-message">
+                            {{ testimonial.message }}
                         </p>
 
-                        <p>{{ testimonial.message }}</p>
+                        <p class="testimonial-author">
+                            {{ testimonial.author.username }} |
+                            {{ testimonial.created_on|date:"d M Y" }}
+                        </p>
 
                     </article>
 
@@ -52,6 +62,30 @@
                 Write a Testimonial
             </a>
         </div>
+
+        {% if page_obj.paginator.count > 0 %}
+
+            <nav class="car-pagination" aria-label="Testimonial pages">
+
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">
+                        &lt;&lt; Previous
+                    </a>
+                {% endif %}
+
+                <span>
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">
+                        Next &gt;&gt;
+                    </a>
+                {% endif %}
+
+            </nav>
+
+        {% endif %}
 
     </div>
 

@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import (
     login_required,
     user_passes_test,
 )
+from django.core.paginator import Paginator
 from django.shortcuts import (
     get_object_or_404,
     redirect,
@@ -47,10 +48,18 @@ def testimonials(request):
         is_approved=True
     ).select_related("author").order_by("-created_on")
 
+    paginator = Paginator(approved_testimonials, 9)
+
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
     return render(
         request,
         "testimonials/testimonials.html",
-        {"testimonials": approved_testimonials},
+        {
+            "testimonials": page_obj,
+            "page_obj": page_obj,
+        },
     )
 
 
