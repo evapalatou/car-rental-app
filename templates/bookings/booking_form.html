@@ -4,24 +4,48 @@
 
 {% block content %}
 
-<section>
-    <h2>Book {{ car.make }} {{ car.model }}</h2>
+<section class="car-detail">
+    <a href="{% url 'cars' %}" class="car-detail-back">
+        &larr; Back to Browse Cars
+    </a>
 
-    <p>Daily Price: €{{ car.daily_price }}</p>
+    <div class="car-detail-layout">
+        <div class="car-detail-image">
+            <img
+                src="{{ car.image.url }}"
+                alt="{{ car.make }} {{ car.model }}"
+            >
+        </div>
 
-    <form method="POST">
-        {% csrf_token %}
+        <div class="car-detail-content">
+            <h2>
+                {% if reservation %}
+                    Edit {{ car.make }} {{ car.model }} Booking
+                {% else %}
+                    Book {{ car.make }} {{ car.model }}
+                {% endif %}
+            </h2>
 
-        {{ form.as_p }}
+            <p class="car-detail-price">
+                €{{ car.daily_price }}
+                <span>per day</span>
+            </p>
 
-        <button type="submit">Submit Reservation</button>
-    </form>
+            <form method="POST">
+                {% csrf_token %}
 
-    <p>
-        <a href="{% url 'car_detail' car.id %}">
-            Back to Car Details
-        </a>
-    </p>
+                {{ form.as_p }}
+
+                <button type="submit" class="button button-primary">
+                    {% if reservation %}
+                        Update Reservation
+                    {% else %}
+                        Submit Reservation
+                    {% endif %}
+                </button>
+            </form>
+        </div>
+    </div>
 </section>
 
 {% endblock %}
