@@ -188,7 +188,7 @@ main {
     grid-template-areas:
         "content image"
         "buttons image";
-    align-items: center;
+    align-items: start;
     column-gap: 3rem;
     row-gap: 1.5rem;
     width: 100%;
