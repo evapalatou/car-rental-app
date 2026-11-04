@@ -52,3 +52,17 @@ For most of the pages Lighthouse reporting tool is not indicating Performance.
 | Testimonials | <details><summary>Testimonials</summary>![CSS](readme/testing/lh-testimonials.png)</details> | 
 | Write Testimonial | <details><summary>Write Testimonial</summary>![CSS](readme/testing/lh-write-testimonial.png)</details> | 
 | Contact | <details><summary>Contact</summary>![CSS](readme/testing/lh-contacts.png)</details> | 
+
+## Manual Testing
+### Navigation & Footer
+| Test Name | Steps | Expected Result | Actual Result | Pass/Fail |
+|---|---|---|---|---|
+| Logo Navigation | 1. Click on the ELITE RIDES logo/title. | User is redirected to the homepage. | Same as expected | ✓ Pass |
+| Home Navigation | 1. Click on the Home link. | User is redirected to the homepage. | Same as expected | ✓ Pass |
+| Browse Cars Navigation | 1. Click on the Browse Cars link. | User is redirected to the car listing page. | Same as expected | ✓ Pass |
+| Register Navigation | 1. While logged out, click on the Register link. | User is redirected to the registration page. | Same as expected | ✓ Pass |
+| Login Navigation | 1. While logged out, click on the Login link. | User is redirected to the login page. | Same as expected | ✓ Pass |
+| My Bookings Navigation | 1. Log in as a customer. 2. Click on the My Bookings link. | User is redirected to their bookings page. | Same as expected | ✓ Pass |
+| Logout Navigation | 1. Log in to the website. 2. Click on the Logout link. 3. Confirm logout if prompted. | User is logged out and redirected to the homepage with a confirmation message. | Same as expected | ✓ Pass |
+| Footer LinkedIn Link | 1. Scroll to the footer. 2. Click on the LinkedIn icon. | User is redirected to the LinkedIn profile. | Same as expected | ✓ Pass |
+| Footer GitHub Link | 1. Scroll to the footer. 2. Click on the GitHub icon. | User is redirected to the GitHub profile. | Same as expected | ✓ Pass |
