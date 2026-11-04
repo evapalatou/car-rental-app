@@ -336,7 +336,7 @@ I have included details of testing in a separate file [TESTING.md](https://githu
 | Reservation Email Configuration | The email configuration initially required corrections to the sender account settings before confirmation and reservation status emails could be delivered successfully. | Corrected the email account configuration and configured Gmail SMTP using environment variables. Successfully tested reservation email notifications. |
 
 ### Unfixed Errors
-No known unfixed bugs were identified during testing.
+The HTML validation process identified some errors on the Browse Cars, Registration and Testimonials pages. Due to time constraints, these issues have not been resolved before submission. The website's main functionality has been manually tested, and the remaining validation errors have been documented for transparency.
 
 ## Deployment
 
