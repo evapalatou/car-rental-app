@@ -36,3 +36,19 @@ Python was validated using [CI Python Linter](https://pep8ci.herokuapp.com/).
 | cars/forms.py | <details><summary>Cars Forms</summary>![CSS](readme/testing/cars-forms.png)</details> | PASS |
 | cars/models.py | <details><summary>Cars Models</summary>![CSS](readme/testing/cars-models.png)</details> | PASS |
 | cars/views.py | <details><summary>Cars Views</summary>![CSS](readme/testing/cars-views.png)</details> | PASS |
+
+## Lighthouse
+For most of the pages Lighthouse reporting tool is not indicating Performance.
+
+| PAGE | SCREENSHOT |
+|---|---|---|
+| Home | <details><summary>Home</summary>![CSS](readme/testing/lh-home.png)</details> | 
+| Register | <details><summary>Register</summary>![CSS](readme/testing/lh-register.png)</details> | 
+| Login | <details><summary>Login</summary>![CSS](readme/testing/lh-login.png)</details> | 
+| Logout | <details><summary>Logout</summary>![CSS](readme/testing/lh-logout.png)</details> |
+| Browse Cars | <details><summary>Browse Cars</summary>![CSS](readme/testing/lh-browse-cars.png)</details> |
+| Car Details | <details><summary>Car Details</summary>![CSS](readme/testing/lh-car-details.png)</details> | 
+| My Bookings | <details><summary>My Bookings</summary>![CSS](readme/testing/lh-mybookings.png)</details> | 
+| Testimonials | <details><summary>Testimonials</summary>![CSS](readme/testing/lh-testimonials.png)</details> | 
+| Write Testimonial | <details><summary>Write Testimonial</summary>![CSS](readme/testing/lh-write-testimonial.png)</details> | 
+| Contact | <details><summary>Contact</summary>![CSS](readme/testing/lh-contact.png)</details> | 
