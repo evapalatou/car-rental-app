@@ -318,6 +318,7 @@ Imagery plays an important role in introducing the car rental service and helpin
 - Google Fonts: Used to source the typography for the website.
 - Coolors: Color Palette generator
 - Unsplash: copyright free images
+- favicon.io: Favicon generator
 
 ## Testing
 I have included details of testing in a separate file [TESTING.md](https://github.com/evapalatou/car-rental-app/blob/main/TESTING.md)
