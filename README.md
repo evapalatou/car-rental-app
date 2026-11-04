@@ -289,7 +289,7 @@ Elite Rides uses two complementary sans-serif typefaces, Lato and Open Sans, to 
 ### Imagery
 Imagery plays an important role in introducing the car rental service and helping customers explore the available vehicles. The homepage features a prominent hero image that supports the website's welcoming introduction and reinforces its focus on car rentals. Vehicle photographs are also displayed throughout the Browse Cars page and individual car detail pages, allowing customers to see the vehicles before making a reservation. Images are presented using responsive styling to maintain a consistent appearance across desktop, tablet and mobile devices.
 
-![Hero Image](readme/imagerys.png)
+![Hero Image](readme/imagery.png)
 
 ## Technologies Used
 ### Core Technologies
