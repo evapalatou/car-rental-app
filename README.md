@@ -317,7 +317,7 @@ Imagery plays an important role in introducing the car rental service and helpin
 - Marvel App: Used to create project wireframes
 - Google Fonts: Used to source the typography for the website.
 - Coolors: Color Palette generator
-- Unsplash: copyright free images s
+- Unsplash: copyright free images
 
 ## Testing
 I have included details of testing in a separate file [TESTING.md](https://github.com/evapalatou/car-rental-app/blob/main/TESTING.md)
