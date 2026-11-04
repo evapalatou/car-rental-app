@@ -323,7 +323,20 @@ Imagery plays an important role in introducing the car rental service and helpin
 I have included details of testing in a separate file [TESTING.md](https://github.com/evapalatou/car-rental-app/blob/main/TESTING.md)
 
 ### Fixed Bugs
+| Bug / Issue | Cause | Solution |
+|---|---|---|
+| Password Reset Email Connection Error | The password reset functionality initially used the local SMTP configuration, resulting in `ConnectionRefusedError: [Errno 61] Connection refused`. | Configured the email backend appropriately during development, initially using Django's console email backend. Later configured Gmail SMTP to support sending emails. |
+| Homepage Template Missing Base Layout | The homepage template was missing the `{% extends "base.html" %}` declaration and the appropriate title block. | Restored the base template inheritance and title block to ensure the homepage uses the shared site layout correctly. |
+| Past Reservation Date Validation | The reservation date validation incorrectly used `self._state.adding`, which interfered with the intended validation behaviour. | Removed the unnecessary `self._state.adding` condition so past reservation dates are validated correctly. |
+| Overlapping Car Reservations | The reservation validation needed to prevent customers from booking a car during dates already covered by another pending or confirmed reservation. | Corrected the date-overlap validation using `start_date__lt=self.end_date` and `end_date__gt=self.start_date` to identify conflicting reservations. |
+| Same-Day Reservation Handover | Reservation availability needed to allow one booking to end on the same day that another booking begins. | Refined the overlap logic to allow same-day handovers without incorrectly treating consecutive reservations as overlapping. |
+| Cancelled Reservations Affecting Availability | Cancelled reservations needed to be excluded from reservation conflict checks. | Updated the reservation validation to exclude cancelled reservations from overlap checks. |
+| Incorrect Car Availability Message | The availability validation displayed a message that did not clearly explain why a booking could not proceed. | Updated the message to: `This car is not available for those dates.` |
+| Reservation Email Configuration | The email configuration initially required corrections to the sender account settings before confirmation and reservation status emails could be delivered successfully. | Corrected the email account configuration and configured Gmail SMTP using environment variables. Successfully tested reservation email notifications. |
+| Static CSS Files Not Loading with DEBUG=False | Static files were not being served correctly when Django's debug mode was disabled. | Configured WhiteNoise middleware and static file settings, then ran `python manage.py collectstatic --noinput` to collect the static files. |
+
 ### Unfixed Errors
+No known unfixed bugs were identified during testing.
 
 ## Deployment
 
