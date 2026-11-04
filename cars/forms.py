@@ -27,3 +27,4 @@ class CarForm(forms.ModelForm):
             )
 
         return daily_price
+    

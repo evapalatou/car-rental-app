@@ -19,7 +19,10 @@ class Car(models.Model):
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     daily_price = models.DecimalField(max_digits=7, decimal_places=2)
     seats = models.PositiveSmallIntegerField()
-    transmission = models.CharField(max_length=20, choices=TRANSMISSION_CHOICES)
+    transmission = models.CharField(
+        max_length=20,
+        choices=TRANSMISSION_CHOICES,
+    )
     description = models.TextField(blank=True)
     image = CloudinaryField('image')
     is_active = models.BooleanField(default=True)
