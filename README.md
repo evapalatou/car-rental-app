@@ -333,7 +333,6 @@ I have included details of testing in a separate file [TESTING.md](https://githu
 | Cancelled Reservations Affecting Availability | Cancelled reservations needed to be excluded from reservation conflict checks. | Updated the reservation validation to exclude cancelled reservations from overlap checks. |
 | Incorrect Car Availability Message | The availability validation displayed a message that did not clearly explain why a booking could not proceed. | Updated the message to: `This car is not available for those dates.` |
 | Reservation Email Configuration | The email configuration initially required corrections to the sender account settings before confirmation and reservation status emails could be delivered successfully. | Corrected the email account configuration and configured Gmail SMTP using environment variables. Successfully tested reservation email notifications. |
-| Static CSS Files Not Loading with DEBUG=False | Static files were not being served correctly when Django's debug mode was disabled. | Configured WhiteNoise middleware and static file settings, then ran `python manage.py collectstatic --noinput` to collect the static files. |
 
 ### Unfixed Errors
 No known unfixed bugs were identified during testing.
@@ -341,12 +340,95 @@ No known unfixed bugs were identified during testing.
 ## Deployment
 
 ### Version Control
+Elite Rides was developed using Visual Studio Code on a local Mac environment. Git and GitHub were used for version control throughout the development process.
+1. Create a repository on [GitHub](https://github.com/) for the project.
+2. Clone the repository to the local machine.
+3. Open the project folder in Visual Studio Code.
+4. Initialise Git if it has not already been initialised.
+5. Create and activate a Python virtual environment.
+6. Install Django and the required project dependencies.
+7. Create the Django project and the required applications.
+8. Configure the project settings, database connection and environment variables.
+9. Create a `.gitignore` file to exclude sensitive information and unnecessary files from version control.
+10. Create a `requirements.txt` file containing the project's dependencies.
+11. Create a `Procfile` to specify the Gunicorn web process.
+12. Stage and commit changes using Git.
+13. Push the committed changes to GitHub using `git push origin main`.
+
+Git was used throughout development to maintain a history of changes, allowing individual features and bug fixes to be committed separately.
+
+The project was also organised using GitHub Projects. A Kanban board was created to manage user stories, acceptance criteria and development progress.
+
+[View the Elite Rides GitHub repository](https://github.com/evapalatou/car-rental-app).
 
 ### Heroku Deployment
+Elite Rides is hosted on [Heroku](https://www.heroku.com/) and uses a PostgreSQL database. Cloudinary is used for image storage, WhiteNoise for static file serving and Gmail SMTP for email notifications.
+
+**Create and configure the Heroku application**
+1. Log in to [Heroku](https://id.heroku.com/login) or create an account.
+2. From the Heroku dashboard, select **New** and then **Create new app**.
+3. Choose a unique application name and select the appropriate region.
+4. Create the application.
+5. Open the **Settings** tab and locate **Config Vars**.
+6. Add the required environment variables:
+   - `SECRET_KEY`
+   - `DATABASE_URL`
+   - `CLOUDINARY_URL`
+   - `EMAIL_HOST_USER`
+   - `EMAIL_HOST_PASSWORD`
+7. Configure the Python buildpack.
+8. Ensure the Django production settings are configured, including `DEBUG=False` and the appropriate `ALLOWED_HOSTS`.
+9. Ensure WhiteNoise is configured to serve static files.
+10. Ensure the `Procfile` specifies the Gunicorn application process.
+
+**Deploy the application**
+1. Make sure the latest changes have been committed and pushed to GitHub.
+2. Run the following command locally to collect static files:
+   `python manage.py collectstatic --noinput`
+3. Open the Heroku application dashboard.
+4. Navigate to the **Deploy** tab.
+5. Follow the configured manual deployment workflow.
+6. Wait for the deployment to complete.
+7. Open the deployed application and test its functionality.
+
+The application is available at:
+
+[Elite Rides – Live Website](https://elite-rides-car-rental-09a9fcc7d9fc.herokuapp.com/)
 
 ### Run Locally
+To run Elite Rides locally, follow these steps:
+1. Clone the repository:
+   `git clone https://github.com/evapalatou/car-rental-app.git`
+2. Navigate into the project directory:
+   `cd car-rental-app`
+3. Create a Python virtual environment:
+   `python -m venv .venv`
+4. Activate the virtual environment:
+   **Mac / Linux:**
+   `source .venv/bin/activate`
+   **Windows:**
+   `.venv\Scripts\activate`
+5. Install the project dependencies:
+   `pip install -r requirements.txt`
+6. Create an `env.py` file in the project root and configure the required environment variables. Do not commit this file to GitHub.
+7. Apply database migrations:
+   `python manage.py migrate`
+8. Collect static files:
+   `python manage.py collectstatic --noinput`
+9. Start the Django development server:
+   `python manage.py runserver`
+10. Open the following address in your browser:
+    `http://127.0.0.1:8000/`
 
 ### Fork Project
+To create your own copy of the Elite Rides repository:
+1. Navigate to the [Elite Rides GitHub repository](https://github.com/evapalatou/car-rental-app).
+2. Click the **Fork** button in the top-right corner of the repository page.
+3. Select your GitHub account as the destination.
+4. Choose a repository name and description if desired.
+5. Click **Create fork**.
+
+GitHub will create a copy of the Elite Rides repository under your account. You can then clone your fork to your local machine and make your own changes.
 
 ## Credits
 
