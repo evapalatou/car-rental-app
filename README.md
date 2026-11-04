@@ -431,4 +431,6 @@ To create your own copy of the Elite Rides repository:
 GitHub will create a copy of the Elite Rides repository under your account. You can then clone your fork to your local machine and make your own changes.
 
 ## Credits
-
+Special thanks to:
+- my Code Institute mentor [Dick Vlaanderen](https://www.linkedin.com/in/dick-vlaanderen/) for his valuable feedback
+- Code Institute online community for support
