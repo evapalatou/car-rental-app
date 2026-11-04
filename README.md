@@ -289,7 +289,33 @@ Elite Rides uses two complementary sans-serif typefaces, Lato and Open Sans, to 
 ### Imagery
 Imagery plays an important role in introducing the car rental service and helping customers explore the available vehicles. The homepage features a prominent hero image that supports the website's welcoming introduction and reinforces its focus on car rentals. Vehicle photographs are also displayed throughout the Browse Cars page and individual car detail pages, allowing customers to see the vehicles before making a reservation. Images are presented using responsive styling to maintain a consistent appearance across desktop, tablet and mobile devices.
 
+![Hero Image](readme/imagerys.png)
+
 ## Technologies Used
+### Core Technologies
+- HTML5: Used to structure the website content and Django templates.
+- CSS3: Used to style the website, create layouts and implement responsive design.
+- JavaScript: Used to provide interactive functionality on the frontend.
+- Python: Used as the main programming language for the application.
+- Django 4.2.19: Python web framework used to build the application, manage database operations, authentication and backend functionality.
+- Django Allauth: Used to provide user registration, login, logout and password reset functionality.
+- PostgreSQL: Relational database used to store application data.
+
+### Additional Technologies and Services
+- Cloudinary: Used for cloud-based image storage and management.
+- WhiteNoise: Used to serve static files in the production environment.
+- Gunicorn: Used as the WSGI HTTP server for the Django application.
+- Heroku: Used to deploy and host the live application.
+- Font Awesome: Used to provide social media icons in the website footer.
+
+### Development Tools and Resources
+- Git: Used for version control and tracking changes throughout development.
+- GitHub: Used to host the project repository, manage issues and organise development using a Kanban board.
+- Visual Studio Code: Used as the code editor and development environment.
+- draw.io: Used to create project diagrams and visual documentation.
+- Marvel App: Used to crete project wireframes
+- Google Fonts: Used to source the typography for the website.
+- Coolors: Color Palette generator
 
 ## Manual Testing
 
