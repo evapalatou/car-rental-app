@@ -300,6 +300,7 @@ Imagery plays an important role in introducing the car rental service and helpin
 - Django 4.2.19: Python web framework used to build the application, manage database operations, authentication and backend functionality.
 - Django Allauth: Used to provide user registration, login, logout and password reset functionality.
 - PostgreSQL: Relational database used to store application data.
+- Neon: Used to host the PostgreSQL database.
 
 ### Additional Technologies and Services
 - Cloudinary: Used for cloud-based image storage and management.
@@ -313,11 +314,13 @@ Imagery plays an important role in introducing the car rental service and helpin
 - GitHub: Used to host the project repository, manage issues and organise development using a Kanban board.
 - Visual Studio Code: Used as the code editor and development environment.
 - draw.io: Used to create project diagrams and visual documentation.
-- Marvel App: Used to crete project wireframes
+- Marvel App: Used to create project wireframes
 - Google Fonts: Used to source the typography for the website.
 - Coolors: Color Palette generator
+- Unsplash: copyright free images s
 
-## Manual Testing
+## Testing
+I have included details of testing in a separate file [TESTING.md](https://github.com/evapalatou/car-rental-app/blob/main/TESTING.md)
 
 ### Fixed Bugs
 ### Unfixed Errors
